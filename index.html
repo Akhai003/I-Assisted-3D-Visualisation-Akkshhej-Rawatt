@@ -1,13 +1,2179 @@
-<!doctype html><html><head><meta charset='utf-8'><meta name='viewport' content='width=device-width,initial-scale=1'><title>Contemporary Classic — AI-Assisted 3D Visualisation</title><style>
-@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,600;1,500&display=swap');
-:root{--bg:#0d0e0f;--panel:#151719;--gold:#b99a62;--ivory:#f0e8da;--muted:#b8b0a4;--faint:#746f67}*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:#08090a;color:var(--ivory);font-family:'DM Sans',sans-serif}.deck{scroll-snap-type:y mandatory;overflow-y:auto;height:100vh}.slide{height:100vh;min-height:720px;scroll-snap-align:start;position:relative;overflow:hidden;padding:6vh 5.5vw;background:radial-gradient(circle at 90% 10%,rgba(185,154,98,.08),transparent 25%),linear-gradient(135deg,#0d0e0f,#111315 70%,#0c0d0e)}.slide:before{content:'';position:absolute;inset:0;opacity:.18;pointer-events:none;background-image:repeating-linear-gradient(135deg,transparent 0 25px,rgba(185,154,98,.05) 25px 26px,transparent 26px 52px)}.topline{position:absolute;left:5.5vw;right:5.5vw;top:3.2vh;border-top:1px solid rgba(185,154,98,.35)}.brand{position:absolute;top:1.25vh;left:5.5vw;color:var(--gold);font-size:11px;letter-spacing:.24em;font-weight:700}.num{position:absolute;right:5.5vw;bottom:2.6vh;color:var(--faint);font-size:12px}.kicker{color:var(--gold);font-size:clamp(12px,1vw,16px);letter-spacing:.2em;font-weight:700;text-transform:uppercase}.title{font-family:'Playfair Display',serif;font-size:clamp(40px,5vw,76px);line-height:1.02;margin:.25em 0}.subtitle{font-size:clamp(18px,1.65vw,28px);color:var(--muted);max-width:850px;line-height:1.45}.grid2{display:grid;grid-template-columns:1fr 1fr;gap:4vw;align-items:center;height:82%}.visual{border:1px solid rgba(185,154,98,.3);background:#151719;padding:14px;box-shadow:0 25px 70px rgba(0,0,0,.35);max-height:68vh;object-fit:contain;width:100%}.meta{display:grid;grid-template-columns:1fr 1fr;gap:28px 50px;margin-top:8vh}.meta small,.label{display:block;color:var(--gold);letter-spacing:.17em;font-size:12px;font-weight:700;margin-bottom:8px}.meta strong{font-size:clamp(18px,1.6vw,25px)}.body{font-size:clamp(17px,1.35vw,23px);line-height:1.55;color:var(--ivory)}.body.muted{color:var(--muted)}.stack{display:grid;gap:26px}.quote{font-family:'Playfair Display',serif;font-size:clamp(24px,2.5vw,40px);font-style:italic;border-left:4px solid var(--gold);padding-left:25px}.cards3{display:grid;grid-template-columns:repeat(3,1fr);gap:2vw;margin-top:4vh}.card{background:rgba(21,23,25,.92);border:1px solid rgba(185,154,98,.25);padding:18px;min-height:0}.card img{width:100%;height:48vh;object-fit:contain;background:#101112}.card h3{font-size:clamp(17px,1.35vw,22px);margin:14px 0 4px}.card .step{color:var(--gold);font-weight:700;letter-spacing:.15em;font-size:12px}.analysis{display:grid;grid-template-columns:repeat(3,1fr);gap:1.6vw;margin-top:3vh}.analysis .card{padding:22px}.analysis h3{color:var(--gold);font-size:14px;letter-spacing:.14em;margin:0 0 12px}.analysis p{font-size:clamp(15px,1.1vw,19px);line-height:1.5;margin:0}.heroimg{position:absolute;right:0;top:0;width:43%;height:100%;object-fit:cover;filter:brightness(.48)}.heroShade{position:absolute;right:0;top:0;width:50%;height:100%;background:linear-gradient(90deg,var(--bg),transparent 55%)}.content{position:relative;z-index:2}.nav{position:fixed;right:18px;top:50%;transform:translateY(-50%);z-index:10;display:grid;gap:8px}.nav a{width:8px;height:8px;border-radius:50%;background:#665b49;border:1px solid #b99a62}.hint{position:fixed;left:50%;bottom:10px;transform:translateX(-50%);z-index:12;color:#b8b0a4;font-size:11px;letter-spacing:.12em;background:rgba(0,0,0,.35);padding:6px 10px;border-radius:20px}@media(max-width:900px){.slide{min-height:900px;padding:7vh 7vw}.grid2{grid-template-columns:1fr;height:auto;gap:25px}.visual{max-height:42vh}.cards3,.analysis{grid-template-columns:1fr}.card img{height:32vh}.meta{margin-top:4vh}.nav{display:none}.heroimg{width:100%;opacity:.28}.heroShade{width:100%;background:linear-gradient(90deg,var(--bg),rgba(13,14,15,.45))}}
-@media print{body{background:#fff}.deck{height:auto;overflow:visible}.slide{width:13.333in;height:7.5in;min-height:0;page-break-after:always;break-after:page;padding:.55in .72in;-webkit-print-color-adjust:exact;print-color-adjust:exact}.nav,.hint{display:none}.title{font-size:34pt}.subtitle{font-size:16pt}.body{font-size:15pt}.card img{height:3.1in}}
-</style></head><body><div class='nav'>${[1,2,3,4,5,6,7].map(n=>`<a href='#s${n}'></a>`).join('')}</div><div class='hint'>SCROLL / ↓ • PRINT → SAVE AS PDF</div><main class='deck'>
-<section class='slide' id='s1'><div class='topline'></div><div class='brand'>AI-ASSISTED 3D VISUALISATION</div><img class='heroimg' src='img-000.jpg'><div class='heroShade'></div><div class='content' style='max-width:58%;padding-top:11vh'><div class='kicker'>Task 01</div><h1 class='title'>Contemporary<br>Classic</h1><p class='subtitle'>From graphite fashion sketch to AI-assisted 3D form — a study in structure, layering and modern formalwear.</p><div class='meta'><div><small>NAME</small><strong>Akkshhej Rawatt</strong></div><div><small>SAP ID</small><strong>590016585</strong></div><div><small>COURSE</small><strong>BBA Digital Business</strong></div><div><small>CAMPUS</small><strong>Kandholi</strong></div></div></div><div class='num'>01 / 07</div></section>
-<section class='slide' id='s2'><div class='topline'></div><div class='brand'>AI-ASSISTED 3D VISUALISATION</div><div class='content'><div class='kicker'>01 · Origin</div><h2 class='title' style='font-size:clamp(36px,4vw,60px)'>Sketch & Concept Setup</h2><p class='subtitle'>The original graphite study establishes silhouette, layering and tailoring before 3D generation.</p><div class='grid2' style='height:66vh;margin-top:2vh'><img class='visual' src='img-001.jpg'><div class='stack'><div><span class='label'>STYLE & MEDIUM</span><div class='body'>Graphite fashion concept sketch using tonal shading and fabric folds to communicate structure, depth and a restrained monochrome palette.</div></div><div><span class='label'>SUBJECT</span><div class='body'>A contemporary formal menswear ensemble built around a fitted waistcoat, crisp shirt, tie, tailored trousers and an extended outer layer.</div></div><div><span class='label'>DESIGN INTENT</span><div class='body'>A sharp, composed silhouette that preserves classic gentleman tailoring while remaining suitable for later AI-assisted 3D interpretation.</div></div></div></div></div><div class='num'>02 / 07</div></section>
-<section class='slide' id='s3'><div class='topline'></div><div class='brand'>AI-ASSISTED 3D VISUALISATION</div><div class='content'><div class='kicker'>02 · Development</div><h2 class='title' style='font-size:clamp(36px,4vw,60px)'>From Sketch to Design Language</h2><div class='grid2' style='height:68vh'><img class='visual' src='img-000.jpg'><div><span class='label'>CONTEMPORARY CLASSIC</span><p class='body'>The concept combines formal tailoring with a darker, more cinematic silhouette. The long outer layer adds movement while the fitted waistcoat keeps the torso structured.</p><div class='stack' style='gap:16px;margin-top:26px'><div class='body'><b>Silhouette</b> — Long coat + fitted inner structure</div><div class='body'><b>Layering</b> — Shirt, waistcoat, tie and outer coat</div><div class='body'><b>Details</b> — Lapel geometry, chain, tie bar and pocket square</div><div class='body'><b>3D Readiness</b> — Front / side / back cues support spatial interpretation</div></div></div></div></div><div class='num'>03 / 07</div></section>
-<section class='slide' id='s4'><div class='topline'></div><div class='brand'>AI-ASSISTED 3D VISUALISATION</div><div class='content'><div class='kicker'>03 · Workflow</div><h2 class='title' style='font-size:clamp(36px,4vw,60px)'>Reference to 3D Generation</h2><p class='subtitle'>Proof of the image-to-3D workflow in Meshy — from concept upload to model generation.</p><div class='cards3'><div class='card'><img src='img-003.jpg'><div class='step'>01</div><h3>Concept image loaded</h3></div><div class='card'><img src='img-004.jpg'><div class='step'>02</div><h3>Image-to-3D setup</h3></div><div class='card'><img src='img-005.jpg'><div class='step'>03</div><h3>Generated model</h3></div></div></div><div class='num'>04 / 07</div></section>
-<section class='slide' id='s5'><div class='topline'></div><div class='brand'>AI-ASSISTED 3D VISUALISATION</div><div class='content'><div class='kicker'>04 · Proof of Output</div><h2 class='title' style='font-size:clamp(36px,4vw,60px)'>Generated Meshy Model</h2><p class='subtitle'>Two model views confirm the translated silhouette, layering and overall three-dimensional construction.</p><div class='grid2' style='height:65vh;margin-top:2vh'><div class='card'><img src='img-005.jpg' style='height:53vh'><h3>Front View</h3><div class='body muted'>Silhouette · waistcoat · chain · coat layering</div></div><div class='card'><img src='img-006.jpg' style='height:53vh'><h3>3/4 View</h3><div class='body muted'>Depth · drape · spatial construction</div></div></div></div><div class='num'>05 / 07</div></section>
-<section class='slide' id='s6'><div class='topline'></div><div class='brand'>AI-ASSISTED 3D VISUALISATION</div><div class='content'><div class='kicker'>05 · Design Analysis</div><h2 class='title' style='font-size:clamp(36px,4vw,60px)'>Form, Material & Visual Language</h2><p class='subtitle'>A readable breakdown of what the 3D translation preserves from the original concept.</p><div class='analysis'><div class='card'><h3>DESIGN & FORM</h3><p>Long formal silhouette with a fitted inner waistcoat and extended outer layer. Vertical proportions create a composed, authoritative stance.</p></div><div class='card'><h3>LAYERING</h3><p>White shirt, dark waistcoat and long coat separate clearly through contrast, lapel structure and hem length.</p></div><div class='card'><h3>TAILORING DETAILS</h3><p>Defined lapels, buttoned waistcoat, tie bar, chain accessory, pocket square and tailored trousers retain the gentleman vocabulary.</p></div><div class='card'><h3>MATERIAL DIRECTION</h3><p>Dark wool-like suiting, restrained satin accents and polished footwear create controlled contrast within the monochrome concept.</p></div><div class='card'><h3>SILHOUETTE & MOVEMENT</h3><p>A fitted torso provides structure while longer coat panels introduce movement and visual depth around the legs.</p></div><div class='card'><h3>3D TRANSLATION</h3><p>Meshy captures the principal silhouette and layered construction, allowing the concept to be evaluated beyond a single sketch viewpoint.</p></div></div></div><div class='num'>06 / 07</div></section>
-<section class='slide' id='s7'><div class='topline'></div><div class='brand'>AI-ASSISTED 3D VISUALISATION</div><img class='heroimg' src='img-002.jpg'><div class='heroShade'></div><div class='content' style='max-width:59%;padding-top:9vh'><div class='kicker'>06 · Outcome</div><h2 class='title'>From a pencil silhouette<br>to a dimensional<br>fashion concept.</h2><p class='subtitle'>The workflow demonstrates how AI-assisted 3D visualisation can extend a fashion sketch into a spatial model for form evaluation, presentation and further design refinement.</p><div class='quote' style='margin-top:6vh'>Structure gives the garment form.<br>Layering gives it depth.<br>3D visualisation gives the concept a new perspective.</div></div><div class='num'>07 / 07</div></section>
-</main></body></html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Contemporary Classic — AI-Assisted 3D Visualisation</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,600;1,500&display=swap" rel="stylesheet">
+
+<style>
+
+/* ============================================================
+   GLOBAL
+============================================================ */
+
+:root {
+    --bg: #0d0e0f;
+    --panel: #151719;
+    --gold: #b99a62;
+    --ivory: #f0e8da;
+    --muted: #b8b0a4;
+    --faint: #746f67;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    background: #08090a;
+    color: var(--ivory);
+    font-family: "DM Sans", sans-serif;
+    overflow: hidden;
+}
+
+
+/* ============================================================
+   PRESENTATION DECK
+============================================================ */
+
+.deck {
+    height: 100vh;
+    overflow-y: auto;
+    scroll-snap-type: y mandatory;
+    scroll-behavior: smooth;
+}
+
+.slide {
+    position: relative;
+
+    width: 100%;
+    height: 100vh;
+    min-height: 720px;
+
+    overflow: hidden;
+
+    padding:
+        clamp(70px, 7vh, 100px)
+        clamp(55px, 5.5vw, 110px);
+
+    scroll-snap-align: start;
+
+    background:
+        radial-gradient(
+            circle at 90% 10%,
+            rgba(185,154,98,.08),
+            transparent 25%
+        ),
+        linear-gradient(
+            135deg,
+            #0d0e0f,
+            #111315 70%,
+            #0c0d0e
+        );
+}
+
+.slide::before {
+    content: "";
+
+    position: absolute;
+    inset: 0;
+
+    opacity: .18;
+    pointer-events: none;
+
+    background-image:
+        repeating-linear-gradient(
+            135deg,
+            transparent 0 25px,
+            rgba(185,154,98,.05) 25px 26px,
+            transparent 26px 52px
+        );
+}
+
+.content {
+    position: relative;
+    z-index: 2;
+}
+
+
+/* ============================================================
+   DECORATIVE ELEMENTS
+============================================================ */
+
+.topline {
+    position: absolute;
+
+    left: 5.5vw;
+    right: 5.5vw;
+    top: 3.2vh;
+
+    border-top: 1px solid rgba(185,154,98,.35);
+}
+
+.brand {
+    position: absolute;
+
+    top: 1.25vh;
+    left: 5.5vw;
+
+    color: var(--gold);
+
+    font-size: 12px;
+    font-weight: 700;
+
+    letter-spacing: .24em;
+}
+
+.num {
+    position: absolute;
+
+    right: 5.5vw;
+    bottom: 2.6vh;
+
+    color: var(--faint);
+
+    font-size: 13px;
+}
+
+
+/* ============================================================
+   TYPOGRAPHY
+============================================================ */
+
+.kicker {
+    color: var(--gold);
+
+    font-size: clamp(13px, .9vw, 17px);
+
+    letter-spacing: .20em;
+
+    font-weight: 700;
+
+    text-transform: uppercase;
+}
+
+.title {
+    margin: .25em 0;
+
+    font-family: "Playfair Display", serif;
+
+    font-size: clamp(48px, 5vw, 82px);
+
+    line-height: 1.02;
+
+    letter-spacing: -.025em;
+}
+
+.subtitle {
+    max-width: 980px;
+
+    font-size: clamp(22px, 1.55vw, 30px);
+
+    line-height: 1.5;
+
+    color: var(--muted);
+}
+
+.body {
+    font-size: clamp(22px, 1.45vw, 29px);
+
+    line-height: 1.55;
+
+    color: var(--ivory);
+}
+
+.body.muted {
+    color: var(--muted);
+}
+
+.label {
+    display: block;
+
+    margin-bottom: 10px;
+
+    color: var(--gold);
+
+    font-size: clamp(13px, .85vw, 16px);
+
+    font-weight: 700;
+
+    letter-spacing: .17em;
+}
+
+.quote {
+    padding-left: 25px;
+
+    border-left: 4px solid var(--gold);
+
+    font-family: "Playfair Display", serif;
+
+    font-size: clamp(27px, 2.2vw, 42px);
+
+    line-height: 1.35;
+
+    font-style: italic;
+}
+
+
+/* ============================================================
+   GENERAL GRID
+============================================================ */
+
+.grid2 {
+    display: grid;
+
+    grid-template-columns:
+        minmax(0, 1fr)
+        minmax(0, 1fr);
+
+    gap: clamp(40px, 4vw, 80px);
+
+    align-items: center;
+
+    height: 82%;
+}
+
+.stack {
+    display: grid;
+    gap: 30px;
+}
+
+
+/* ============================================================
+   IMAGES
+============================================================ */
+
+.visual {
+    width: 100%;
+
+    max-height: 68vh;
+
+    object-fit: contain;
+
+    padding: 14px;
+
+    border: 1px solid rgba(185,154,98,.30);
+
+    background: #151719;
+
+    box-shadow:
+        0 25px 70px rgba(0,0,0,.35);
+}
+
+
+/* ============================================================
+   COVER SLIDE META
+============================================================ */
+
+.meta {
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, minmax(0, 1fr));
+
+    gap: 28px 50px;
+
+    margin-top: 7vh;
+}
+
+.meta small {
+    display: block;
+
+    margin-bottom: 8px;
+
+    color: var(--gold);
+
+    letter-spacing: .17em;
+
+    font-size: 14px;
+
+    font-weight: 700;
+}
+
+.meta strong {
+    font-size: clamp(19px, 1.4vw, 27px);
+}
+
+
+/* ============================================================
+   DEVELOPMENT SLIDE
+   THIS IS THE ONE THAT WAS TOO SMALL
+============================================================ */
+
+.development-grid {
+    grid-template-columns:
+        minmax(420px, .90fr)
+        minmax(620px, 1.10fr);
+
+    gap: clamp(55px, 5vw, 100px);
+
+    height: 68vh;
+}
+
+.development-copy {
+    max-width: 900px;
+}
+
+.development-copy > .body {
+    font-size: clamp(25px, 1.7vw, 33px);
+
+    line-height: 1.52;
+}
+
+.development-copy .stack {
+    gap: 20px !important;
+
+    margin-top: 32px !important;
+}
+
+.development-copy .stack .body {
+    font-size: clamp(22px, 1.45vw, 28px);
+
+    line-height: 1.45;
+}
+
+.development-copy .stack .body b {
+    color: #fff3df;
+
+    font-weight: 700;
+}
+
+
+/* ============================================================
+   WORKFLOW CARDS
+============================================================ */
+
+.cards3 {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, minmax(0, 1fr));
+
+    gap: 2vw;
+
+    margin-top: 4vh;
+}
+
+.card {
+    min-height: 0;
+
+    padding: 18px;
+
+    background: rgba(21,23,25,.92);
+
+    border: 1px solid rgba(185,154,98,.25);
+}
+
+.card img {
+    width: 100%;
+    height: 46vh;
+
+    object-fit: contain;
+
+    background: #101112;
+}
+
+.card h3 {
+    margin: 14px 0 4px;
+
+    font-size: clamp(19px, 1.25vw, 24px);
+}
+
+.card .step {
+    color: var(--gold);
+
+    font-weight: 700;
+
+    letter-spacing: .15em;
+
+    font-size: 13px;
+}
+
+
+/* ============================================================
+   DESIGN ANALYSIS
+============================================================ */
+
+.analysis {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, minmax(0, 1fr));
+
+    gap: 1.6vw;
+
+    margin-top: 3vh;
+}
+
+.analysis .card {
+    padding: 24px;
+}
+
+.analysis h3 {
+    margin: 0 0 13px;
+
+    color: var(--gold);
+
+    font-size: clamp(14px, .9vw, 17px);
+
+    letter-spacing: .14em;
+}
+
+.analysis p {
+    margin: 0;
+
+    font-size: clamp(18px, 1.08vw, 22px);
+
+    line-height: 1.55;
+}
+
+
+/* ============================================================
+   HERO IMAGES
+============================================================ */
+
+.heroimg {
+    position: absolute;
+
+    right: 0;
+    top: 0;
+
+    width: 43%;
+    height: 100%;
+
+    object-fit: cover;
+
+    filter: brightness(.48);
+}
+
+.heroShade {
+    position: absolute;
+
+    right: 0;
+    top: 0;
+
+    width: 50%;
+    height: 100%;
+
+    background:
+        linear-gradient(
+            90deg,
+            var(--bg),
+            transparent 55%
+        );
+}
+
+
+/* ============================================================
+   SIDE NAVIGATION
+============================================================ */
+
+.nav {
+    position: fixed;
+
+    right: 18px;
+    top: 50%;
+
+    transform: translateY(-50%);
+
+    z-index: 100;
+
+    display: grid;
+
+    gap: 9px;
+}
+
+.nav a {
+    width: 9px;
+    height: 9px;
+
+    display: block;
+
+    border-radius: 50%;
+
+    background: #665b49;
+
+    border: 1px solid #b99a62;
+
+    transition:
+        transform .25s ease,
+        background .25s ease;
+}
+
+.nav a:hover {
+    transform: scale(1.6);
+
+    background: var(--gold);
+}
+
+
+/* ============================================================
+   SCROLL HINT
+============================================================ */
+
+.hint {
+    position: fixed;
+
+    left: 50%;
+    bottom: 10px;
+
+    transform: translateX(-50%);
+
+    z-index: 120;
+
+    padding: 6px 11px;
+
+    border-radius: 20px;
+
+    color: #b8b0a4;
+
+    background: rgba(0,0,0,.38);
+
+    font-size: 11px;
+
+    letter-spacing: .12em;
+
+    pointer-events: none;
+}
+
+
+/* ============================================================
+   INTERACTIVE MEME PORTAL
+============================================================ */
+
+.portal-cover {
+    position: relative;
+
+    width: 100%;
+    height: 100vh;
+    min-height: 720px;
+
+    overflow: hidden;
+
+    background: #080706;
+
+    scroll-snap-align: start;
+}
+
+
+/* IMPORTANT:
+   contain = FULL IMAGE VISIBLE
+   Death's scythe will not get cropped.
+*/
+
+.portal-cover > img {
+    position: absolute;
+
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: contain;
+
+    object-position: center;
+
+    background: #080706;
+}
+
+
+/* Subtle cinematic vignette */
+
+.portal-vignette {
+    position: absolute;
+
+    inset: 0;
+
+    pointer-events: none;
+
+    background:
+        radial-gradient(
+            circle at 50% 50%,
+            transparent 0 20%,
+            rgba(0,0,0,.025) 45%,
+            rgba(0,0,0,.22) 100%
+        );
+}
+
+
+/* ============================================================
+   CENTER HOTSPOT
+============================================================ */
+
+.portal-hotspot {
+    position: absolute;
+
+    /*
+       Tune ONLY these two values
+       if exact convergence is slightly off.
+    */
+
+    left: 50%;
+    top: 50%;
+
+    width: 160px;
+    height: 160px;
+
+    transform:
+        translate(-50%, -50%);
+
+    z-index: 50;
+
+    display: grid;
+
+    place-items: center;
+
+    border-radius: 50%;
+
+    text-decoration: none;
+
+    cursor: pointer;
+
+    outline: none;
+}
+
+
+/* ============================================================
+   PERMANENT SUBTLE CENTER BEACON
+============================================================ */
+
+.portal-beacon {
+    position: absolute;
+
+    width: 46px;
+    height: 46px;
+
+    border-radius: 50%;
+
+    border:
+        1px solid rgba(255,226,158,.42);
+
+    opacity: .76;
+
+    pointer-events: none;
+
+    transition:
+        transform .35s ease,
+        opacity .35s ease,
+        box-shadow .35s ease,
+        border-color .35s ease;
+
+    box-shadow:
+        0 0 18px rgba(255,199,95,.18),
+        inset 0 0 14px rgba(255,220,150,.08);
+}
+
+
+/* tiny crosshair */
+
+.portal-beacon::before,
+.portal-beacon::after {
+    content: "";
+
+    position: absolute;
+
+    left: 50%;
+    top: 50%;
+
+    transform:
+        translate(-50%, -50%);
+
+    background:
+        rgba(255,229,170,.62);
+}
+
+.portal-beacon::before {
+    width: 19px;
+    height: 1px;
+}
+
+.portal-beacon::after {
+    width: 1px;
+    height: 19px;
+}
+
+
+/* ============================================================
+   CENTER DOT
+============================================================ */
+
+.portal-dot {
+    width: 7px;
+    height: 7px;
+
+    border-radius: 50%;
+
+    background:
+        rgba(255,236,184,.20);
+
+    opacity: .18;
+
+    transition:
+        .35s ease;
+
+    box-shadow:
+        0 0 0 rgba(255,210,120,0);
+}
+
+
+/* ============================================================
+   RIPPLE RINGS
+============================================================ */
+
+.portal-hotspot::before,
+.portal-hotspot::after {
+    content: "";
+
+    position: absolute;
+
+    border-radius: 50%;
+
+    opacity: 0;
+
+    transform: scale(.3);
+
+    border:
+        1px solid rgba(255,225,155,.85);
+
+    box-shadow:
+        0 0 22px rgba(255,205,100,.35);
+
+    pointer-events: none;
+}
+
+.portal-hotspot::before {
+    inset: 37px;
+}
+
+.portal-hotspot::after {
+    inset: 19px;
+}
+
+
+/* ============================================================
+   ENTER PROJECT LABEL
+============================================================ */
+
+.portal-tag {
+    position: absolute;
+
+    top: calc(100% + 4px);
+    left: 50%;
+
+    transform:
+        translate(-50%, 8px);
+
+    white-space: nowrap;
+
+    padding:
+        10px 16px;
+
+    border:
+        1px solid rgba(255,231,174,.38);
+
+    border-radius: 999px;
+
+    background:
+        rgba(12,10,8,.78);
+
+    backdrop-filter:
+        blur(9px);
+
+    -webkit-backdrop-filter:
+        blur(9px);
+
+    color: #f7e7bd;
+
+    font-size: 11px;
+
+    font-weight: 700;
+
+    line-height: 1;
+
+    letter-spacing: .18em;
+
+    opacity: 0;
+
+    pointer-events: none;
+
+    transition:
+        opacity .3s ease,
+        transform .3s ease;
+
+    box-shadow:
+        0 8px 30px rgba(0,0,0,.30);
+}
+
+
+/* ============================================================
+   PORTAL HOVER
+============================================================ */
+
+.portal-hotspot:hover .portal-beacon,
+.portal-hotspot:focus-visible .portal-beacon {
+    opacity: 1;
+
+    transform:
+        scale(1.13);
+
+    border-color:
+        rgba(255,232,174,.78);
+
+    box-shadow:
+        0 0 22px rgba(255,207,108,.52),
+        0 0 55px rgba(255,185,70,.25),
+        inset 0 0 17px rgba(255,225,160,.18);
+}
+
+.portal-hotspot:hover .portal-dot,
+.portal-hotspot:focus-visible .portal-dot {
+    opacity: 1;
+
+    transform:
+        scale(1.2);
+
+    background:
+        #ffe7aa;
+
+    box-shadow:
+        0 0 10px #ffd98a,
+        0 0 30px rgba(255,199,95,.78),
+        0 0 65px rgba(255,181,65,.42);
+}
+
+.portal-hotspot:hover::before,
+.portal-hotspot:focus-visible::before {
+    animation:
+        portalRipple 1.8s ease-out infinite;
+}
+
+.portal-hotspot:hover::after,
+.portal-hotspot:focus-visible::after {
+    animation:
+        portalRipple 1.8s .55s ease-out infinite;
+}
+
+.portal-hotspot:hover .portal-tag,
+.portal-hotspot:focus-visible .portal-tag {
+    opacity: 1;
+
+    transform:
+        translate(-50%, 0);
+}
+
+
+/* ============================================================
+   PORTAL INSTRUCTION
+============================================================ */
+
+.portal-help {
+    position: absolute;
+
+    left: 50%;
+    bottom: 25px;
+
+    transform:
+        translateX(-50%);
+
+    z-index: 20;
+
+    color:
+        rgba(255,244,218,.72);
+
+    font-size: 11px;
+
+    letter-spacing: .18em;
+
+    text-transform: uppercase;
+
+    text-shadow:
+        0 2px 12px #000;
+
+    pointer-events: none;
+}
+
+
+/* ============================================================
+   RIPPLE ANIMATION
+============================================================ */
+
+@keyframes portalRipple {
+
+    0% {
+        opacity: .8;
+        transform: scale(.35);
+    }
+
+    75% {
+        opacity: .12;
+    }
+
+    100% {
+        opacity: 0;
+        transform: scale(1.55);
+    }
+}
+
+
+/* ============================================================
+   LARGE DESKTOP
+============================================================ */
+
+@media (min-width: 1600px) {
+
+    .body {
+        font-size: 27px;
+    }
+
+    .subtitle {
+        font-size: 28px;
+    }
+
+    .development-copy > .body {
+        font-size: 30px;
+    }
+
+    .development-copy .stack .body {
+        font-size: 26px;
+    }
+
+    .analysis p {
+        font-size: 20px;
+    }
+
+}
+
+
+/* ============================================================
+   TABLET / SMALL LAPTOP
+============================================================ */
+
+@media (max-width: 1100px) {
+
+    .development-grid {
+        grid-template-columns:
+            minmax(360px, .88fr)
+            minmax(0, 1.12fr);
+
+        gap: 38px;
+    }
+
+    .development-copy > .body {
+        font-size: 22px;
+    }
+
+    .development-copy .stack .body {
+        font-size: 20px;
+    }
+
+}
+
+
+/* ============================================================
+   MOBILE
+============================================================ */
+
+@media (max-width: 900px) {
+
+    body {
+        overflow: auto;
+    }
+
+    .slide {
+        min-height: 900px;
+
+        height: auto;
+
+        padding:
+            75px 7vw;
+    }
+
+    .grid2,
+    .development-grid {
+        grid-template-columns: 1fr;
+
+        height: auto;
+
+        gap: 28px;
+    }
+
+    .visual {
+        max-height: 43vh;
+    }
+
+    .cards3,
+    .analysis {
+        grid-template-columns: 1fr;
+    }
+
+    .card img {
+        height: 32vh;
+    }
+
+    .meta {
+        margin-top: 4vh;
+    }
+
+    .nav {
+        display: none;
+    }
+
+    .heroimg {
+        width: 100%;
+
+        opacity: .28;
+    }
+
+    .heroShade {
+        width: 100%;
+
+        background:
+            linear-gradient(
+                90deg,
+                var(--bg),
+                rgba(13,14,15,.45)
+            );
+    }
+
+    .body {
+        font-size: 19px;
+    }
+
+    .subtitle {
+        font-size: 20px;
+    }
+
+    .development-copy > .body {
+        font-size: 21px;
+    }
+
+    .development-copy .stack .body {
+        font-size: 19px;
+    }
+
+    .portal-hotspot {
+        width: 125px;
+        height: 125px;
+    }
+
+    .portal-tag {
+        font-size: 9px;
+    }
+
+    .portal-help {
+        bottom: 16px;
+
+        font-size: 9px;
+    }
+
+    .portal-dot {
+        opacity: .65;
+
+        box-shadow:
+            0 0 10px rgba(255,215,130,.6);
+
+        animation:
+            portalMobile 2.6s ease-in-out infinite;
+    }
+
+}
+
+
+/* Mobile beacon */
+
+@keyframes portalMobile {
+
+    50% {
+        box-shadow:
+            0 0 14px #ffd98a,
+            0 0 34px rgba(255,195,90,.45);
+    }
+
+}
+
+
+/* ============================================================
+   PRINT / PDF
+============================================================ */
+
+@media print {
+
+    body {
+        background: #fff;
+        overflow: visible;
+    }
+
+    .deck {
+        height: auto;
+        overflow: visible;
+    }
+
+    .slide,
+    .portal-cover {
+        width: 13.333in;
+        height: 7.5in;
+        min-height: 0;
+
+        page-break-after: always;
+        break-after: page;
+
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+    }
+
+    .slide {
+        padding:
+            .55in .72in;
+    }
+
+    .nav,
+    .hint,
+    .portal-help {
+        display: none;
+    }
+
+    .title {
+        font-size: 34pt;
+    }
+
+    .subtitle {
+        font-size: 17pt;
+    }
+
+    .body {
+        font-size: 15.5pt;
+    }
+
+    .development-copy > .body {
+        font-size: 17pt;
+    }
+
+    .development-copy .stack .body {
+        font-size: 15.5pt;
+    }
+
+    .card img {
+        height: 3.1in;
+    }
+
+}
+
+</style>
+</head>
+
+
+<body>
+
+
+<!-- ==========================================================
+     NAVIGATION
+========================================================== -->
+
+<nav class="nav" aria-label="Presentation navigation">
+
+    <a href="#s1" aria-label="Cover"></a>
+    <a href="#s2" aria-label="Sketch"></a>
+    <a href="#s3" aria-label="Development"></a>
+    <a href="#s4" aria-label="Workflow"></a>
+    <a href="#s5" aria-label="Output"></a>
+    <a href="#s6" aria-label="Analysis"></a>
+    <a href="#s7" aria-label="Outcome"></a>
+
+</nav>
+
+
+<div class="hint">
+    SCROLL / ↓ • PRINT → SAVE AS PDF
+</div>
+
+
+<main class="deck">
+
+
+<!-- ==========================================================
+     INTERACTIVE PORTAL
+========================================================== -->
+
+<section
+    class="portal-cover"
+    id="portal"
+>
+
+    <img
+        src="portal-wallpaper.png"
+        alt="Interactive AI-assisted 3D visualisation project artwork"
+    >
+
+    <div class="portal-vignette"></div>
+
+
+    <!--
+        Clicking the center now ENTERS the presentation
+        instead of reloading the same GitHub URL.
+    -->
+
+    <a
+        class="portal-hotspot"
+        href="#s1"
+        aria-label="Enter project presentation"
+    >
+
+        <span class="portal-beacon"></span>
+
+        <span class="portal-dot"></span>
+
+        <span class="portal-tag">
+            ENTER PROJECT
+        </span>
+
+    </a>
+
+
+    <div class="portal-help">
+        Move to the point they are indicating
+    </div>
+
+</section>
+
+
+<!-- ==========================================================
+     SLIDE 1
+========================================================== -->
+
+<section
+    class="slide"
+    id="s1"
+>
+
+    <div class="topline"></div>
+
+    <div class="brand">
+        AI-ASSISTED 3D VISUALISATION
+    </div>
+
+
+    <img
+        class="heroimg"
+        src="img-000.jpg"
+        alt=""
+    >
+
+    <div class="heroShade"></div>
+
+
+    <div
+        class="content"
+        style="
+            max-width:58%;
+            padding-top:11vh;
+        "
+    >
+
+        <div class="kicker">
+            Task 01
+        </div>
+
+
+        <h1 class="title">
+            Contemporary<br>
+            Classic
+        </h1>
+
+
+        <p class="subtitle">
+
+            From graphite fashion sketch to AI-assisted 3D form —
+            a study in structure, layering and modern formalwear.
+
+        </p>
+
+
+        <div class="meta">
+
+            <div>
+                <small>NAME</small>
+                <strong>Akkshhej Rawatt</strong>
+            </div>
+
+            <div>
+                <small>SAP ID</small>
+                <strong>590016585</strong>
+            </div>
+
+            <div>
+                <small>COURSE</small>
+                <strong>BBA Digital Business</strong>
+            </div>
+
+            <div>
+                <small>CAMPUS</small>
+                <strong>Kandholi</strong>
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <div class="num">
+        01 / 07
+    </div>
+
+</section>
+
+
+<!-- ==========================================================
+     SLIDE 2
+========================================================== -->
+
+<section
+    class="slide"
+    id="s2"
+>
+
+    <div class="topline"></div>
+
+    <div class="brand">
+        AI-ASSISTED 3D VISUALISATION
+    </div>
+
+
+    <div class="content">
+
+        <div class="kicker">
+            01 · Origin
+        </div>
+
+
+        <h2
+            class="title"
+            style="
+                font-size:
+                clamp(42px,4vw,66px);
+            "
+        >
+            Sketch & Concept Setup
+        </h2>
+
+
+        <p class="subtitle">
+
+            The original graphite study establishes silhouette,
+            layering and tailoring before 3D generation.
+
+        </p>
+
+
+        <div
+            class="grid2"
+            style="
+                height:66vh;
+                margin-top:2vh;
+            "
+        >
+
+            <img
+                class="visual"
+                src="img-001.jpg"
+                alt="Original graphite fashion concept sketch"
+            >
+
+
+            <div class="stack">
+
+
+                <div>
+
+                    <span class="label">
+                        STYLE & MEDIUM
+                    </span>
+
+                    <div class="body">
+
+                        Graphite fashion concept sketch using tonal
+                        shading and fabric folds to communicate
+                        structure, depth and a restrained
+                        monochrome palette.
+
+                    </div>
+
+                </div>
+
+
+                <div>
+
+                    <span class="label">
+                        SUBJECT
+                    </span>
+
+                    <div class="body">
+
+                        A contemporary formal menswear ensemble
+                        built around a fitted waistcoat, crisp
+                        shirt, tie, tailored trousers and an
+                        extended outer layer.
+
+                    </div>
+
+                </div>
+
+
+                <div>
+
+                    <span class="label">
+                        DESIGN INTENT
+                    </span>
+
+                    <div class="body">
+
+                        A sharp, composed silhouette that preserves
+                        classic gentleman tailoring while remaining
+                        suitable for later AI-assisted 3D
+                        interpretation.
+
+                    </div>
+
+                </div>
+
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <div class="num">
+        02 / 07
+    </div>
+
+</section>
+
+
+<!-- ==========================================================
+     SLIDE 3
+========================================================== -->
+
+<section
+    class="slide"
+    id="s3"
+>
+
+    <div class="topline"></div>
+
+    <div class="brand">
+        AI-ASSISTED 3D VISUALISATION
+    </div>
+
+
+    <div class="content">
+
+        <div class="kicker">
+            02 · Development
+        </div>
+
+
+        <h2
+            class="title"
+            style="
+                font-size:
+                clamp(42px,4vw,66px);
+            "
+        >
+            From Sketch to Design Language
+        </h2>
+
+
+        <div class="grid2 development-grid">
+
+
+            <img
+                class="visual"
+                src="img-000.jpg"
+                alt="Fashion concept development and model views"
+            >
+
+
+            <div class="development-copy">
+
+                <span class="label">
+                    CONTEMPORARY CLASSIC
+                </span>
+
+
+                <p class="body">
+
+                    The concept combines formal tailoring with a
+                    darker, more cinematic silhouette. The long
+                    outer layer adds movement while the fitted
+                    waistcoat keeps the torso structured.
+
+                </p>
+
+
+                <div class="stack">
+
+
+                    <div class="body">
+
+                        <b>Silhouette</b>
+                        —
+                        Long coat + fitted inner structure
+
+                    </div>
+
+
+                    <div class="body">
+
+                        <b>Layering</b>
+                        —
+                        Shirt, waistcoat, tie and outer coat
+
+                    </div>
+
+
+                    <div class="body">
+
+                        <b>Details</b>
+                        —
+                        Lapel geometry, chain, tie bar and
+                        pocket square
+
+                    </div>
+
+
+                    <div class="body">
+
+                        <b>3D Readiness</b>
+                        —
+                        Front / side / back cues support
+                        spatial interpretation
+
+                    </div>
+
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <div class="num">
+        03 / 07
+    </div>
+
+</section>
+
+
+<!-- ==========================================================
+     SLIDE 4
+========================================================== -->
+
+<section
+    class="slide"
+    id="s4"
+>
+
+    <div class="topline"></div>
+
+    <div class="brand">
+        AI-ASSISTED 3D VISUALISATION
+    </div>
+
+
+    <div class="content">
+
+        <div class="kicker">
+            03 · Workflow
+        </div>
+
+
+        <h2
+            class="title"
+            style="
+                font-size:
+                clamp(42px,4vw,66px);
+            "
+        >
+            Reference to 3D Generation
+        </h2>
+
+
+        <p class="subtitle">
+
+            Proof of the image-to-3D workflow in Meshy —
+            from concept upload to model generation.
+
+        </p>
+
+
+        <div class="cards3">
+
+
+            <div class="card">
+
+                <img
+                    src="img-003.jpg"
+                    alt="Concept image loaded into Meshy"
+                >
+
+                <div class="step">
+                    01
+                </div>
+
+                <h3>
+                    Concept image loaded
+                </h3>
+
+            </div>
+
+
+            <div class="card">
+
+                <img
+                    src="img-004.jpg"
+                    alt="Meshy image-to-3D setup"
+                >
+
+                <div class="step">
+                    02
+                </div>
+
+                <h3>
+                    Image-to-3D setup
+                </h3>
+
+            </div>
+
+
+            <div class="card">
+
+                <img
+                    src="img-005.jpg"
+                    alt="Generated 3D model"
+                >
+
+                <div class="step">
+                    03
+                </div>
+
+                <h3>
+                    Generated model
+                </h3>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+
+    <div class="num">
+        04 / 07
+    </div>
+
+</section>
+
+
+<!-- ==========================================================
+     SLIDE 5
+========================================================== -->
+
+<section
+    class="slide"
+    id="s5"
+>
+
+    <div class="topline"></div>
+
+    <div class="brand">
+        AI-ASSISTED 3D VISUALISATION
+    </div>
+
+
+    <div class="content">
+
+        <div class="kicker">
+            04 · Proof of Output
+        </div>
+
+
+        <h2
+            class="title"
+            style="
+                font-size:
+                clamp(42px,4vw,66px);
+            "
+        >
+            Generated Meshy Model
+        </h2>
+
+
+        <p class="subtitle">
+
+            Two model views confirm the translated silhouette,
+            layering and overall three-dimensional construction.
+
+        </p>
+
+
+        <div
+            class="grid2"
+            style="
+                height:65vh;
+                margin-top:2vh;
+            "
+        >
+
+
+            <div class="card">
+
+                <img
+                    src="img-005.jpg"
+                    alt="Generated Meshy model front view"
+                    style="height:53vh"
+                >
+
+                <h3>
+                    Front View
+                </h3>
+
+                <div class="body muted">
+                    Silhouette · waistcoat · chain · coat layering
+                </div>
+
+            </div>
+
+
+            <div class="card">
+
+                <img
+                    src="img-006.jpg"
+                    alt="Generated Meshy model three-quarter view"
+                    style="height:53vh"
+                >
+
+                <h3>
+                    3/4 View
+                </h3>
+
+                <div class="body muted">
+                    Depth · drape · spatial construction
+                </div>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+
+    <div class="num">
+        05 / 07
+    </div>
+
+</section>
+
+
+<!-- ==========================================================
+     SLIDE 6
+========================================================== -->
+
+<section
+    class="slide"
+    id="s6"
+>
+
+    <div class="topline"></div>
+
+    <div class="brand">
+        AI-ASSISTED 3D VISUALISATION
+    </div>
+
+
+    <div class="content">
+
+        <div class="kicker">
+            05 · Design Analysis
+        </div>
+
+
+        <h2
+            class="title"
+            style="
+                font-size:
+                clamp(42px,4vw,66px);
+            "
+        >
+            Form, Material & Visual Language
+        </h2>
+
+
+        <p class="subtitle">
+
+            A readable breakdown of what the 3D translation
+            preserves from the original concept.
+
+        </p>
+
+
+        <div class="analysis">
+
+
+            <div class="card">
+
+                <h3>
+                    DESIGN & FORM
+                </h3>
+
+                <p>
+
+                    Long formal silhouette with a fitted inner
+                    waistcoat and extended outer layer. Vertical
+                    proportions create a composed, authoritative
+                    stance.
+
+                </p>
+
+            </div>
+
+
+            <div class="card">
+
+                <h3>
+                    LAYERING
+                </h3>
+
+                <p>
+
+                    White shirt, dark waistcoat and long coat
+                    separate clearly through contrast, lapel
+                    structure and hem length.
+
+                </p>
+
+            </div>
+
+
+            <div class="card">
+
+                <h3>
+                    TAILORING DETAILS
+                </h3>
+
+                <p>
+
+                    Defined lapels, buttoned waistcoat, tie bar,
+                    chain accessory, pocket square and tailored
+                    trousers retain the gentleman vocabulary.
+
+                </p>
+
+            </div>
+
+
+            <div class="card">
+
+                <h3>
+                    MATERIAL DIRECTION
+                </h3>
+
+                <p>
+
+                    Dark wool-like suiting, restrained satin
+                    accents and polished footwear create
+                    controlled contrast within the monochrome
+                    concept.
+
+                </p>
+
+            </div>
+
+
+            <div class="card">
+
+                <h3>
+                    SILHOUETTE & MOVEMENT
+                </h3>
+
+                <p>
+
+                    A fitted torso provides structure while
+                    longer coat panels introduce movement and
+                    visual depth around the legs.
+
+                </p>
+
+            </div>
+
+
+            <div class="card">
+
+                <h3>
+                    3D TRANSLATION
+                </h3>
+
+                <p>
+
+                    Meshy captures the principal silhouette and
+                    layered construction, allowing the concept
+                    to be evaluated beyond a single sketch
+                    viewpoint.
+
+                </p>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+
+    <div class="num">
+        06 / 07
+    </div>
+
+</section>
+
+
+<!-- ==========================================================
+     SLIDE 7
+========================================================== -->
+
+<section
+    class="slide"
+    id="s7"
+>
+
+    <div class="topline"></div>
+
+    <div class="brand">
+        AI-ASSISTED 3D VISUALISATION
+    </div>
+
+
+    <img
+        class="heroimg"
+        src="img-002.jpg"
+        alt=""
+    >
+
+    <div class="heroShade"></div>
+
+
+    <div
+        class="content"
+        style="
+            max-width:59%;
+            padding-top:9vh;
+        "
+    >
+
+        <div class="kicker">
+            06 · Outcome
+        </div>
+
+
+        <h2 class="title">
+
+            From a pencil silhouette<br>
+            to a dimensional<br>
+            fashion concept.
+
+        </h2>
+
+
+        <p class="subtitle">
+
+            The workflow demonstrates how AI-assisted 3D
+            visualisation can extend a fashion sketch into a
+            spatial model for form evaluation, presentation
+            and further design refinement.
+
+        </p>
+
+
+        <div
+            class="quote"
+            style="
+                margin-top:6vh;
+            "
+        >
+
+            Structure gives the garment form.<br>
+            Layering gives it depth.<br>
+            3D visualisation gives the concept a new perspective.
+
+        </div>
+
+
+    </div>
+
+
+    <div class="num">
+        07 / 07
+    </div>
+
+</section>
+
+
+</main>
+
+
+<!-- ==========================================================
+     JAVASCRIPT
+========================================================== -->
+
+<script>
+
+/*
+    IMPORTANT:
+    There is NO template-string map/join code here.
+
+    Therefore the previous:
+
+    ${[1,2,3,4,5,6,7].map(...).join('')}
+
+    garbage cannot appear on the right side anymore.
+*/
+
+
+/* Smooth presentation entry */
+
+document
+    .querySelector(".portal-hotspot")
+    .addEventListener(
+        "click",
+        function(event) {
+
+            event.preventDefault();
+
+            document
+                .querySelector("#s1")
+                .scrollIntoView({
+                    behavior: "smooth",
+                    block: "start"
+                });
+
+        }
+    );
+
+
+/* Keyboard navigation */
+
+document.addEventListener(
+    "keydown",
+    function(event) {
+
+        const deck =
+            document.querySelector(".deck");
+
+        const amount =
+            window.innerHeight;
+
+
+        if (
+            event.key === "ArrowDown" ||
+            event.key === "PageDown"
+        ) {
+
+            event.preventDefault();
+
+            deck.scrollBy({
+                top: amount,
+                behavior: "smooth"
+            });
+
+        }
+
+
+        if (
+            event.key === "ArrowUp" ||
+            event.key === "PageUp"
+        ) {
+
+            event.preventDefault();
+
+            deck.scrollBy({
+                top: -amount,
+                behavior: "smooth"
+            });
+
+        }
+
+    }
+);
+
+
+/* Defensive cleanup:
+   if any rogue template text somehow exists,
+   remove it.
+*/
+
+function removeRogueTemplateText() {
+
+    const walker =
+        document.createTreeWalker(
+            document.body,
+            NodeFilter.SHOW_TEXT
+        );
+
+    const remove = [];
+
+    let node;
+
+
+    while (
+        node = walker.nextNode()
+    ) {
+
+        const text =
+            node.nodeValue || "";
+
+
+        if (
+            text.includes("${[") ||
+            text.includes(".map(n=>") ||
+            text.includes(".join('')") ||
+            text.includes('.join("")')
+        ) {
+
+            remove.push(node);
+
+        }
+
+    }
+
+
+    remove.forEach(
+        function(node) {
+            node.remove();
+        }
+    );
+
+}
+
+
+removeRogueTemplateText();
+
+</script>
+
+
+</body>
+</html>
