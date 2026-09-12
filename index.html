@@ -4,26 +4,38 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Contemporary Classic — AI-Assisted 3D Visualisation</title>
+<title>AI-Assisted 3D Visualisation — Akkshhej Rawatt</title>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,600;1,500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,500&display=swap" rel="stylesheet">
 
 <style>
 
 /* ============================================================
-   GLOBAL
+   ROOT
 ============================================================ */
 
 :root {
-    --bg: #0d0e0f;
+    --bg: #0c0d0e;
+    --bg2: #111315;
     --panel: #151719;
-    --gold: #b99a62;
-    --ivory: #f0e8da;
-    --muted: #b8b0a4;
-    --faint: #746f67;
+
+    --gold: #c5a367;
+    --gold-soft: rgba(197,163,103,.35);
+
+    --ivory: #f3ecdf;
+    --muted: #c1b8aa;
+    --faint: #80786d;
+
+    --slide-pad-x: clamp(60px, 5.6vw, 115px);
+    --slide-pad-top: clamp(72px, 7vh, 105px);
 }
+
+
+/* ============================================================
+   RESET
+============================================================ */
 
 * {
     box-sizing: border-box;
@@ -35,52 +47,97 @@ html {
 
 body {
     margin: 0;
-    background: #08090a;
+
+    background: var(--bg);
+
     color: var(--ivory);
+
     font-family: "DM Sans", sans-serif;
+
     overflow: hidden;
 }
 
 
 /* ============================================================
-   PRESENTATION DECK
+   PRESENTATION CONTAINER
 ============================================================ */
 
 .deck {
+    width: 100%;
     height: 100vh;
+
     overflow-y: auto;
+    overflow-x: hidden;
+
     scroll-snap-type: y mandatory;
+
     scroll-behavior: smooth;
+
+    overscroll-behavior-y: contain;
+
+    scrollbar-width: thin;
+    scrollbar-color: #67583f #111315;
 }
+
+
+/* Chrome scrollbar */
+
+.deck::-webkit-scrollbar {
+    width: 7px;
+}
+
+.deck::-webkit-scrollbar-track {
+    background: #111315;
+}
+
+.deck::-webkit-scrollbar-thumb {
+    background: #67583f;
+    border-radius: 20px;
+}
+
+
+/* ============================================================
+   SLIDES
+============================================================ */
 
 .slide {
     position: relative;
 
     width: 100%;
     height: 100vh;
-    min-height: 720px;
+    min-height: 700px;
+
+    padding:
+        var(--slide-pad-top)
+        var(--slide-pad-x)
+        clamp(55px, 6vh, 80px);
 
     overflow: hidden;
 
-    padding:
-        clamp(70px, 7vh, 100px)
-        clamp(55px, 5.5vw, 110px);
-
     scroll-snap-align: start;
+    scroll-snap-stop: always;
 
     background:
         radial-gradient(
-            circle at 90% 10%,
-            rgba(185,154,98,.08),
-            transparent 25%
+            circle at 88% 12%,
+            rgba(197,163,103,.075),
+            transparent 27%
+        ),
+        radial-gradient(
+            circle at 15% 90%,
+            rgba(255,255,255,.025),
+            transparent 28%
         ),
         linear-gradient(
             135deg,
-            #0d0e0f,
-            #111315 70%,
-            #0c0d0e
+            #0c0d0e 0%,
+            #111315 58%,
+            #0b0c0d 100%
         );
 }
+
+
+/* Subtle tailored texture */
 
 .slide::before {
     content: "";
@@ -88,61 +145,78 @@ body {
     position: absolute;
     inset: 0;
 
-    opacity: .18;
     pointer-events: none;
+
+    opacity: .18;
 
     background-image:
         repeating-linear-gradient(
             135deg,
-            transparent 0 25px,
-            rgba(185,154,98,.05) 25px 26px,
-            transparent 26px 52px
+            transparent 0 27px,
+            rgba(197,163,103,.045) 27px 28px,
+            transparent 28px 56px
         );
-}
-
-.content {
-    position: relative;
-    z-index: 2;
 }
 
 
 /* ============================================================
-   DECORATIVE ELEMENTS
+   CONTENT LAYER
+============================================================ */
+
+.content {
+    position: relative;
+    z-index: 3;
+}
+
+
+/* ============================================================
+   TOP DECORATION
 ============================================================ */
 
 .topline {
     position: absolute;
 
-    left: 5.5vw;
-    right: 5.5vw;
-    top: 3.2vh;
+    left: 5.6vw;
+    right: 5.6vw;
+    top: 3.1vh;
 
-    border-top: 1px solid rgba(185,154,98,.35);
+    z-index: 5;
+
+    border-top:
+        1px solid rgba(197,163,103,.32);
 }
 
 .brand {
     position: absolute;
 
-    top: 1.25vh;
-    left: 5.5vw;
+    left: 5.6vw;
+    top: 1.15vh;
+
+    z-index: 5;
 
     color: var(--gold);
 
-    font-size: 12px;
+    font-size: 11px;
     font-weight: 700;
 
-    letter-spacing: .24em;
+    letter-spacing: .25em;
+
+    text-transform: uppercase;
 }
 
-.num {
+.page-number {
     position: absolute;
 
-    right: 5.5vw;
-    bottom: 2.6vh;
+    right: 5.6vw;
+    bottom: 2.5vh;
+
+    z-index: 5;
 
     color: var(--faint);
 
     font-size: 13px;
+
+    letter-spacing: .08em;
 }
 
 
@@ -151,49 +225,86 @@ body {
 ============================================================ */
 
 .kicker {
+    margin-bottom: 10px;
+
     color: var(--gold);
 
     font-size: clamp(13px, .9vw, 17px);
 
-    letter-spacing: .20em;
-
     font-weight: 700;
+
+    letter-spacing: .20em;
 
     text-transform: uppercase;
 }
 
 .title {
-    margin: .25em 0;
+    margin:
+        0 0 18px;
 
-    font-family: "Playfair Display", serif;
+    font-family:
+        "Playfair Display",
+        Georgia,
+        serif;
 
-    font-size: clamp(48px, 5vw, 82px);
+    font-size:
+        clamp(48px, 4.7vw, 80px);
 
-    line-height: 1.02;
+    line-height: 1.03;
 
     letter-spacing: -.025em;
-}
-
-.subtitle {
-    max-width: 980px;
-
-    font-size: clamp(22px, 1.55vw, 30px);
-
-    line-height: 1.5;
-
-    color: var(--muted);
-}
-
-.body {
-    font-size: clamp(22px, 1.45vw, 29px);
-
-    line-height: 1.55;
 
     color: var(--ivory);
 }
 
-.body.muted {
+.section-title {
+    margin:
+        0 0 15px;
+
+    font-family:
+        "Playfair Display",
+        Georgia,
+        serif;
+
+    font-size:
+        clamp(43px, 3.8vw, 66px);
+
+    line-height: 1.05;
+
+    letter-spacing: -.02em;
+
+    color: var(--ivory);
+}
+
+.subtitle {
+    max-width: 950px;
+
+    margin: 0;
+
     color: var(--muted);
+
+    font-size:
+        clamp(21px, 1.45vw, 29px);
+
+    line-height: 1.52;
+}
+
+.body {
+    color: var(--ivory);
+
+    font-size:
+        clamp(21px, 1.34vw, 27px);
+
+    line-height: 1.55;
+}
+
+.body-muted {
+    color: var(--muted);
+
+    font-size:
+        clamp(18px, 1.12vw, 23px);
+
+    line-height: 1.5;
 }
 
 .label {
@@ -203,157 +314,258 @@ body {
 
     color: var(--gold);
 
-    font-size: clamp(13px, .85vw, 16px);
+    font-size:
+        clamp(13px, .82vw, 16px);
 
     font-weight: 700;
 
     letter-spacing: .17em;
+
+    text-transform: uppercase;
 }
 
-.quote {
-    padding-left: 25px;
-
-    border-left: 4px solid var(--gold);
-
-    font-family: "Playfair Display", serif;
-
-    font-size: clamp(27px, 2.2vw, 42px);
-
-    line-height: 1.35;
-
-    font-style: italic;
+strong {
+    color: #fff3df;
 }
 
 
 /* ============================================================
-   GENERAL GRID
+   GENERAL TWO COLUMN GRID
 ============================================================ */
 
-.grid2 {
+.grid-2 {
     display: grid;
 
     grid-template-columns:
         minmax(0, 1fr)
         minmax(0, 1fr);
 
-    gap: clamp(40px, 4vw, 80px);
+    gap:
+        clamp(42px, 4vw, 82px);
 
     align-items: center;
-
-    height: 82%;
-}
-
-.stack {
-    display: grid;
-    gap: 30px;
 }
 
 
 /* ============================================================
-   IMAGES
+   IMAGE STYLE
 ============================================================ */
 
 .visual {
+    display: block;
+
     width: 100%;
 
-    max-height: 68vh;
+    max-height: 66vh;
 
     object-fit: contain;
 
-    padding: 14px;
-
-    border: 1px solid rgba(185,154,98,.30);
+    padding: 12px;
 
     background: #151719;
 
+    border:
+        1px solid rgba(197,163,103,.32);
+
     box-shadow:
-        0 25px 70px rgba(0,0,0,.35);
+        0 28px 80px rgba(0,0,0,.34);
 }
 
 
 /* ============================================================
-   COVER SLIDE META
+   COVER
 ============================================================ */
 
-.meta {
+.cover-content {
+    max-width: 58%;
+
+    padding-top: 10vh;
+}
+
+.cover-meta {
     display: grid;
 
     grid-template-columns:
         repeat(2, minmax(0, 1fr));
 
-    gap: 28px 50px;
+    gap:
+        28px 55px;
 
     margin-top: 7vh;
 }
 
-.meta small {
+.cover-meta small {
     display: block;
 
-    margin-bottom: 8px;
+    margin-bottom: 7px;
 
     color: var(--gold);
 
-    letter-spacing: .17em;
-
-    font-size: 14px;
+    font-size: 13px;
 
     font-weight: 700;
+
+    letter-spacing: .17em;
 }
 
-.meta strong {
-    font-size: clamp(19px, 1.4vw, 27px);
+.cover-meta strong {
+    font-size:
+        clamp(19px, 1.35vw, 26px);
 }
 
 
 /* ============================================================
-   DEVELOPMENT SLIDE
-   THIS IS THE ONE THAT WAS TOO SMALL
+   HERO IMAGE
+============================================================ */
+
+.hero-image {
+    position: absolute;
+
+    right: 0;
+    top: 0;
+
+    width: 44%;
+    height: 100%;
+
+    object-fit: cover;
+
+    filter:
+        brightness(.50)
+        contrast(1.03);
+}
+
+.hero-shade {
+    position: absolute;
+
+    right: 0;
+    top: 0;
+
+    width: 54%;
+    height: 100%;
+
+    z-index: 2;
+
+    pointer-events: none;
+
+    background:
+        linear-gradient(
+            90deg,
+            var(--bg) 0%,
+            rgba(12,13,14,.93) 15%,
+            rgba(12,13,14,.32) 65%,
+            rgba(12,13,14,.08) 100%
+        );
+}
+
+
+/* ============================================================
+   SLIDE 2 — SKETCH
+============================================================ */
+
+.sketch-grid {
+    grid-template-columns:
+        minmax(440px, .95fr)
+        minmax(540px, 1.05fr);
+
+    height: 65vh;
+
+    margin-top: 2.2vh;
+}
+
+.sketch-copy {
+    display: grid;
+
+    gap: 28px;
+}
+
+
+/* Pinterest source note */
+
+.source-note {
+    margin-top: 14px;
+
+    padding:
+        13px 16px;
+
+    border-left:
+        3px solid var(--gold);
+
+    background:
+        rgba(197,163,103,.07);
+
+    color: #cfc5b5;
+
+    font-size:
+        clamp(15px, .92vw, 18px);
+
+    line-height: 1.45;
+}
+
+.source-note strong {
+    color: var(--gold);
+}
+
+
+/* ============================================================
+   SLIDE 3 — DEVELOPMENT
 ============================================================ */
 
 .development-grid {
     grid-template-columns:
-        minmax(420px, .90fr)
+        minmax(430px, .90fr)
         minmax(620px, 1.10fr);
 
-    gap: clamp(55px, 5vw, 100px);
+    gap:
+        clamp(55px, 5vw, 105px);
 
-    height: 68vh;
+    height: 67vh;
+
+    margin-top: 1vh;
 }
 
 .development-copy {
     max-width: 900px;
 }
 
-.development-copy > .body {
-    font-size: clamp(25px, 1.7vw, 33px);
+.development-intro {
+    margin:
+        18px 0 32px;
+
+    color: var(--ivory);
+
+    font-size:
+        clamp(24px, 1.6vw, 32px);
 
     line-height: 1.52;
 }
 
-.development-copy .stack {
-    gap: 20px !important;
+.development-points {
+    display: grid;
 
-    margin-top: 32px !important;
+    gap: 19px;
 }
 
-.development-copy .stack .body {
-    font-size: clamp(22px, 1.45vw, 28px);
+.development-point {
+    color: var(--ivory);
 
-    line-height: 1.45;
+    font-size:
+        clamp(21px, 1.34vw, 27px);
+
+    line-height: 1.46;
 }
 
-.development-copy .stack .body b {
-    color: #fff3df;
+.development-point strong {
+    display: inline;
 
-    font-weight: 700;
+    margin-right: 3px;
 }
 
 
 /* ============================================================
-   WORKFLOW CARDS
+   WORKFLOW
 ============================================================ */
 
-.cards3 {
+.cards-3 {
     display: grid;
 
     grid-template-columns:
@@ -361,567 +573,238 @@ body {
 
     gap: 2vw;
 
-    margin-top: 4vh;
+    margin-top: 3.4vh;
 }
 
 .card {
-    min-height: 0;
+    padding: 17px;
 
-    padding: 18px;
+    background:
+        rgba(21,23,25,.92);
 
-    background: rgba(21,23,25,.92);
+    border:
+        1px solid rgba(197,163,103,.26);
 
-    border: 1px solid rgba(185,154,98,.25);
+    box-shadow:
+        0 20px 60px rgba(0,0,0,.20);
 }
 
 .card img {
+    display: block;
+
     width: 100%;
-    height: 46vh;
+    height: 44vh;
 
     object-fit: contain;
 
     background: #101112;
 }
 
-.card h3 {
-    margin: 14px 0 4px;
+.step {
+    margin-top: 13px;
 
-    font-size: clamp(19px, 1.25vw, 24px);
-}
-
-.card .step {
     color: var(--gold);
+
+    font-size: 12px;
 
     font-weight: 700;
 
-    letter-spacing: .15em;
+    letter-spacing: .18em;
+}
 
-    font-size: 13px;
+.card h3 {
+    margin:
+        5px 0 0;
+
+    color: var(--ivory);
+
+    font-size:
+        clamp(19px, 1.22vw, 24px);
+
+    line-height: 1.3;
 }
 
 
 /* ============================================================
-   DESIGN ANALYSIS
+   OUTPUT SLIDE
 ============================================================ */
 
-.analysis {
+.output-grid {
+    height: 64vh;
+
+    margin-top: 2vh;
+}
+
+.output-card img {
+    height: 51vh;
+}
+
+.output-card .body-muted {
+    margin-top: 6px;
+}
+
+
+/* ============================================================
+   ANALYSIS
+============================================================ */
+
+.analysis-grid {
     display: grid;
 
     grid-template-columns:
         repeat(3, minmax(0, 1fr));
 
-    gap: 1.6vw;
+    gap:
+        clamp(18px, 1.6vw, 30px);
 
     margin-top: 3vh;
 }
 
-.analysis .card {
-    padding: 24px;
+.analysis-card {
+    min-height: 190px;
+
+    padding:
+        clamp(20px, 1.6vw, 28px);
+
+    background:
+        rgba(21,23,25,.90);
+
+    border:
+        1px solid rgba(197,163,103,.25);
 }
 
-.analysis h3 {
-    margin: 0 0 13px;
+.analysis-card h3 {
+    margin:
+        0 0 12px;
 
     color: var(--gold);
 
-    font-size: clamp(14px, .9vw, 17px);
+    font-size:
+        clamp(14px, .92vw, 17px);
 
     letter-spacing: .14em;
 }
 
-.analysis p {
+.analysis-card p {
     margin: 0;
 
-    font-size: clamp(18px, 1.08vw, 22px);
+    color: var(--ivory);
 
-    line-height: 1.55;
+    font-size:
+        clamp(18px, 1.05vw, 22px);
+
+    line-height: 1.53;
 }
 
 
 /* ============================================================
-   HERO IMAGES
+   FINAL QUOTE
 ============================================================ */
 
-.heroimg {
-    position: absolute;
+.quote {
+    margin-top: 6vh;
 
-    right: 0;
-    top: 0;
+    padding-left: 25px;
 
-    width: 43%;
-    height: 100%;
+    border-left:
+        4px solid var(--gold);
 
-    object-fit: cover;
+    font-family:
+        "Playfair Display",
+        Georgia,
+        serif;
 
-    filter: brightness(.48);
-}
+    color: var(--ivory);
 
-.heroShade {
-    position: absolute;
+    font-size:
+        clamp(25px, 2vw, 38px);
 
-    right: 0;
-    top: 0;
+    line-height: 1.38;
 
-    width: 50%;
-    height: 100%;
-
-    background:
-        linear-gradient(
-            90deg,
-            var(--bg),
-            transparent 55%
-        );
+    font-style: italic;
 }
 
 
 /* ============================================================
-   SIDE NAVIGATION
+   NAVIGATION DOTS
 ============================================================ */
 
 .nav {
     position: fixed;
 
-    right: 18px;
+    right: 20px;
     top: 50%;
-
-    transform: translateY(-50%);
 
     z-index: 100;
 
+    transform:
+        translateY(-50%);
+
     display: grid;
 
-    gap: 9px;
+    gap: 10px;
 }
 
 .nav a {
+    display: block;
+
     width: 9px;
     height: 9px;
 
-    display: block;
-
     border-radius: 50%;
 
-    background: #665b49;
+    border:
+        1px solid var(--gold);
 
-    border: 1px solid #b99a62;
+    background: #554a39;
 
     transition:
         transform .25s ease,
-        background .25s ease;
+        background .25s ease,
+        box-shadow .25s ease;
 }
 
-.nav a:hover {
-    transform: scale(1.6);
+.nav a:hover,
+.nav a.active {
+    transform: scale(1.55);
 
     background: var(--gold);
+
+    box-shadow:
+        0 0 12px rgba(197,163,103,.4);
 }
 
 
 /* ============================================================
-   SCROLL HINT
+   BOTTOM HINT
 ============================================================ */
 
-.hint {
+.scroll-hint {
     position: fixed;
 
     left: 50%;
-    bottom: 10px;
+    bottom: 11px;
 
-    transform: translateX(-50%);
-
-    z-index: 120;
-
-    padding: 6px 11px;
-
-    border-radius: 20px;
-
-    color: #b8b0a4;
-
-    background: rgba(0,0,0,.38);
-
-    font-size: 11px;
-
-    letter-spacing: .12em;
-
-    pointer-events: none;
-}
-
-
-/* ============================================================
-   INTERACTIVE MEME PORTAL
-============================================================ */
-
-.portal-cover {
-    position: relative;
-
-    width: 100%;
-    height: 100vh;
-    min-height: 720px;
-
-    overflow: hidden;
-
-    background: #080706;
-
-    scroll-snap-align: start;
-}
-
-
-/* IMPORTANT:
-   contain = FULL IMAGE VISIBLE
-   Death's scythe will not get cropped.
-*/
-
-.portal-cover > img {
-    position: absolute;
-
-    inset: 0;
-
-    width: 100%;
-    height: 100%;
-
-    object-fit: contain;
-
-    object-position: center;
-
-    background: #080706;
-}
-
-
-/* Subtle cinematic vignette */
-
-.portal-vignette {
-    position: absolute;
-
-    inset: 0;
-
-    pointer-events: none;
-
-    background:
-        radial-gradient(
-            circle at 50% 50%,
-            transparent 0 20%,
-            rgba(0,0,0,.025) 45%,
-            rgba(0,0,0,.22) 100%
-        );
-}
-
-
-/* ============================================================
-   CENTER HOTSPOT
-============================================================ */
-
-.portal-hotspot {
-    position: absolute;
-
-    /*
-       Tune ONLY these two values
-       if exact convergence is slightly off.
-    */
-
-    left: 50%;
-    top: 50%;
-
-    width: 160px;
-    height: 160px;
-
-    transform:
-        translate(-50%, -50%);
-
-    z-index: 50;
-
-    display: grid;
-
-    place-items: center;
-
-    border-radius: 50%;
-
-    text-decoration: none;
-
-    cursor: pointer;
-
-    outline: none;
-}
-
-
-/* ============================================================
-   PERMANENT SUBTLE CENTER BEACON
-============================================================ */
-
-.portal-beacon {
-    position: absolute;
-
-    width: 46px;
-    height: 46px;
-
-    border-radius: 50%;
-
-    border:
-        1px solid rgba(255,226,158,.42);
-
-    opacity: .76;
-
-    pointer-events: none;
-
-    transition:
-        transform .35s ease,
-        opacity .35s ease,
-        box-shadow .35s ease,
-        border-color .35s ease;
-
-    box-shadow:
-        0 0 18px rgba(255,199,95,.18),
-        inset 0 0 14px rgba(255,220,150,.08);
-}
-
-
-/* tiny crosshair */
-
-.portal-beacon::before,
-.portal-beacon::after {
-    content: "";
-
-    position: absolute;
-
-    left: 50%;
-    top: 50%;
-
-    transform:
-        translate(-50%, -50%);
-
-    background:
-        rgba(255,229,170,.62);
-}
-
-.portal-beacon::before {
-    width: 19px;
-    height: 1px;
-}
-
-.portal-beacon::after {
-    width: 1px;
-    height: 19px;
-}
-
-
-/* ============================================================
-   CENTER DOT
-============================================================ */
-
-.portal-dot {
-    width: 7px;
-    height: 7px;
-
-    border-radius: 50%;
-
-    background:
-        rgba(255,236,184,.20);
-
-    opacity: .18;
-
-    transition:
-        .35s ease;
-
-    box-shadow:
-        0 0 0 rgba(255,210,120,0);
-}
-
-
-/* ============================================================
-   RIPPLE RINGS
-============================================================ */
-
-.portal-hotspot::before,
-.portal-hotspot::after {
-    content: "";
-
-    position: absolute;
-
-    border-radius: 50%;
-
-    opacity: 0;
-
-    transform: scale(.3);
-
-    border:
-        1px solid rgba(255,225,155,.85);
-
-    box-shadow:
-        0 0 22px rgba(255,205,100,.35);
-
-    pointer-events: none;
-}
-
-.portal-hotspot::before {
-    inset: 37px;
-}
-
-.portal-hotspot::after {
-    inset: 19px;
-}
-
-
-/* ============================================================
-   ENTER PROJECT LABEL
-============================================================ */
-
-.portal-tag {
-    position: absolute;
-
-    top: calc(100% + 4px);
-    left: 50%;
-
-    transform:
-        translate(-50%, 8px);
-
-    white-space: nowrap;
-
-    padding:
-        10px 16px;
-
-    border:
-        1px solid rgba(255,231,174,.38);
-
-    border-radius: 999px;
-
-    background:
-        rgba(12,10,8,.78);
-
-    backdrop-filter:
-        blur(9px);
-
-    -webkit-backdrop-filter:
-        blur(9px);
-
-    color: #f7e7bd;
-
-    font-size: 11px;
-
-    font-weight: 700;
-
-    line-height: 1;
-
-    letter-spacing: .18em;
-
-    opacity: 0;
-
-    pointer-events: none;
-
-    transition:
-        opacity .3s ease,
-        transform .3s ease;
-
-    box-shadow:
-        0 8px 30px rgba(0,0,0,.30);
-}
-
-
-/* ============================================================
-   PORTAL HOVER
-============================================================ */
-
-.portal-hotspot:hover .portal-beacon,
-.portal-hotspot:focus-visible .portal-beacon {
-    opacity: 1;
-
-    transform:
-        scale(1.13);
-
-    border-color:
-        rgba(255,232,174,.78);
-
-    box-shadow:
-        0 0 22px rgba(255,207,108,.52),
-        0 0 55px rgba(255,185,70,.25),
-        inset 0 0 17px rgba(255,225,160,.18);
-}
-
-.portal-hotspot:hover .portal-dot,
-.portal-hotspot:focus-visible .portal-dot {
-    opacity: 1;
-
-    transform:
-        scale(1.2);
-
-    background:
-        #ffe7aa;
-
-    box-shadow:
-        0 0 10px #ffd98a,
-        0 0 30px rgba(255,199,95,.78),
-        0 0 65px rgba(255,181,65,.42);
-}
-
-.portal-hotspot:hover::before,
-.portal-hotspot:focus-visible::before {
-    animation:
-        portalRipple 1.8s ease-out infinite;
-}
-
-.portal-hotspot:hover::after,
-.portal-hotspot:focus-visible::after {
-    animation:
-        portalRipple 1.8s .55s ease-out infinite;
-}
-
-.portal-hotspot:hover .portal-tag,
-.portal-hotspot:focus-visible .portal-tag {
-    opacity: 1;
-
-    transform:
-        translate(-50%, 0);
-}
-
-
-/* ============================================================
-   PORTAL INSTRUCTION
-============================================================ */
-
-.portal-help {
-    position: absolute;
-
-    left: 50%;
-    bottom: 25px;
+    z-index: 100;
 
     transform:
         translateX(-50%);
 
-    z-index: 20;
+    padding:
+        6px 12px;
 
-    color:
-        rgba(255,244,218,.72);
+    border-radius: 20px;
 
-    font-size: 11px;
+    background:
+        rgba(0,0,0,.42);
 
-    letter-spacing: .18em;
+    color: #aaa296;
 
-    text-transform: uppercase;
+    font-size: 10px;
 
-    text-shadow:
-        0 2px 12px #000;
+    letter-spacing: .13em;
 
     pointer-events: none;
-}
-
-
-/* ============================================================
-   RIPPLE ANIMATION
-============================================================ */
-
-@keyframes portalRipple {
-
-    0% {
-        opacity: .8;
-        transform: scale(.35);
-    }
-
-    75% {
-        opacity: .12;
-    }
-
-    100% {
-        opacity: 0;
-        transform: scale(1.55);
-    }
 }
 
 
@@ -931,23 +814,23 @@ body {
 
 @media (min-width: 1600px) {
 
-    .body {
-        font-size: 27px;
-    }
-
-    .subtitle {
-        font-size: 28px;
-    }
-
-    .development-copy > .body {
+    .development-intro {
         font-size: 30px;
     }
 
-    .development-copy .stack .body {
-        font-size: 26px;
+    .development-point {
+        font-size: 25px;
     }
 
-    .analysis p {
+    .body {
+        font-size: 25px;
+    }
+
+    .subtitle {
+        font-size: 27px;
+    }
+
+    .analysis-card p {
         font-size: 20px;
     }
 
@@ -955,25 +838,30 @@ body {
 
 
 /* ============================================================
-   TABLET / SMALL LAPTOP
+   SMALLER LAPTOP
 ============================================================ */
 
-@media (max-width: 1100px) {
+@media (max-width: 1200px) {
 
+    .slide {
+        --slide-pad-x: 55px;
+    }
+
+    .sketch-grid,
     .development-grid {
         grid-template-columns:
-            minmax(360px, .88fr)
-            minmax(0, 1.12fr);
+            minmax(360px, .9fr)
+            minmax(0, 1.1fr);
 
         gap: 38px;
     }
 
-    .development-copy > .body {
+    .development-intro {
         font-size: 22px;
     }
 
-    .development-copy .stack .body {
-        font-size: 20px;
+    .development-point {
+        font-size: 19px;
     }
 
 }
@@ -989,60 +877,84 @@ body {
         overflow: auto;
     }
 
-    .slide {
-        min-height: 900px;
-
-        height: auto;
-
-        padding:
-            75px 7vw;
+    .deck {
+        scroll-snap-type: none;
     }
 
-    .grid2,
-    .development-grid {
+    .slide {
+        height: auto;
+        min-height: 100vh;
+
+        overflow: visible;
+
+        padding:
+            75px 7vw
+            65px;
+    }
+
+    .grid-2,
+    .sketch-grid,
+    .development-grid,
+    .output-grid {
         grid-template-columns: 1fr;
 
         height: auto;
+    }
 
-        gap: 28px;
+    .cards-3,
+    .analysis-grid {
+        grid-template-columns: 1fr;
     }
 
     .visual {
-        max-height: 43vh;
-    }
-
-    .cards3,
-    .analysis {
-        grid-template-columns: 1fr;
+        max-height: 47vh;
     }
 
     .card img {
-        height: 32vh;
+        height: 35vh;
     }
 
-    .meta {
-        margin-top: 4vh;
+    .cover-content {
+        max-width: 100%;
+
+        padding-top: 8vh;
+    }
+
+    .cover-meta {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .hero-image {
+        width: 100%;
+
+        opacity: .23;
+    }
+
+    .hero-shade {
+        width: 100%;
+
+        background:
+            linear-gradient(
+                90deg,
+                rgba(12,13,14,.96),
+                rgba(12,13,14,.62)
+            );
     }
 
     .nav {
         display: none;
     }
 
-    .heroimg {
-        width: 100%;
-
-        opacity: .28;
+    .scroll-hint {
+        display: none;
     }
 
-    .heroShade {
-        width: 100%;
+    .development-intro {
+        font-size: 21px;
+    }
 
-        background:
-            linear-gradient(
-                90deg,
-                var(--bg),
-                rgba(13,14,15,.45)
-            );
+    .development-point {
+        font-size: 19px;
     }
 
     .body {
@@ -1051,52 +963,6 @@ body {
 
     .subtitle {
         font-size: 20px;
-    }
-
-    .development-copy > .body {
-        font-size: 21px;
-    }
-
-    .development-copy .stack .body {
-        font-size: 19px;
-    }
-
-    .portal-hotspot {
-        width: 125px;
-        height: 125px;
-    }
-
-    .portal-tag {
-        font-size: 9px;
-    }
-
-    .portal-help {
-        bottom: 16px;
-
-        font-size: 9px;
-    }
-
-    .portal-dot {
-        opacity: .65;
-
-        box-shadow:
-            0 0 10px rgba(255,215,130,.6);
-
-        animation:
-            portalMobile 2.6s ease-in-out infinite;
-    }
-
-}
-
-
-/* Mobile beacon */
-
-@keyframes portalMobile {
-
-    50% {
-        box-shadow:
-            0 0 14px #ffd98a,
-            0 0 34px rgba(255,195,90,.45);
     }
 
 }
@@ -1108,21 +974,32 @@ body {
 
 @media print {
 
+    @page {
+        size: 13.333in 7.5in;
+        margin: 0;
+    }
+
     body {
-        background: #fff;
         overflow: visible;
+
+        background: white;
     }
 
     .deck {
         height: auto;
+
         overflow: visible;
+
+        scroll-snap-type: none;
     }
 
-    .slide,
-    .portal-cover {
+    .slide {
         width: 13.333in;
         height: 7.5in;
         min-height: 0;
+
+        padding:
+            .55in .72in;
 
         page-break-after: always;
         break-after: page;
@@ -1131,39 +1008,41 @@ body {
         print-color-adjust: exact;
     }
 
-    .slide {
-        padding:
-            .55in .72in;
-    }
-
     .nav,
-    .hint,
-    .portal-help {
+    .scroll-hint {
         display: none;
     }
 
     .title {
-        font-size: 34pt;
+        font-size: 39pt;
+    }
+
+    .section-title {
+        font-size: 31pt;
     }
 
     .subtitle {
-        font-size: 17pt;
+        font-size: 16pt;
     }
 
     .body {
-        font-size: 15.5pt;
+        font-size: 14pt;
     }
 
-    .development-copy > .body {
-        font-size: 17pt;
+    .development-intro {
+        font-size: 16pt;
     }
 
-    .development-copy .stack .body {
-        font-size: 15.5pt;
+    .development-point {
+        font-size: 14pt;
+    }
+
+    .analysis-card p {
+        font-size: 11pt;
     }
 
     .card img {
-        height: 3.1in;
+        height: 3.05in;
     }
 
 }
@@ -1176,84 +1055,44 @@ body {
 
 
 <!-- ==========================================================
-     NAVIGATION
+     SIDE NAVIGATION
+     STATIC HTML — NO map/join JAVASCRIPT
 ========================================================== -->
 
 <nav class="nav" aria-label="Presentation navigation">
 
-    <a href="#s1" aria-label="Cover"></a>
-    <a href="#s2" aria-label="Sketch"></a>
-    <a href="#s3" aria-label="Development"></a>
-    <a href="#s4" aria-label="Workflow"></a>
-    <a href="#s5" aria-label="Output"></a>
-    <a href="#s6" aria-label="Analysis"></a>
-    <a href="#s7" aria-label="Outcome"></a>
+    <a href="#s1" data-slide="0" aria-label="Slide 1"></a>
+
+    <a href="#s2" data-slide="1" aria-label="Slide 2"></a>
+
+    <a href="#s3" data-slide="2" aria-label="Slide 3"></a>
+
+    <a href="#s4" data-slide="3" aria-label="Slide 4"></a>
+
+    <a href="#s5" data-slide="4" aria-label="Slide 5"></a>
+
+    <a href="#s6" data-slide="5" aria-label="Slide 6"></a>
+
+    <a href="#s7" data-slide="6" aria-label="Slide 7"></a>
 
 </nav>
 
 
-<div class="hint">
-    SCROLL / ↓ • PRINT → SAVE AS PDF
+<div class="scroll-hint">
+
+    WHEEL / ↑ ↓ TO NAVIGATE · PRINT → SAVE AS PDF
+
 </div>
 
 
-<main class="deck">
+<main class="deck" id="deck">
 
 
 <!-- ==========================================================
-     INTERACTIVE PORTAL
+     SLIDE 1 — COVER
 ========================================================== -->
 
-<section
-    class="portal-cover"
-    id="portal"
->
-
-    <img
-        src="portal-wallpaper.png"
-        alt="Interactive AI-assisted 3D visualisation project artwork"
-    >
-
-    <div class="portal-vignette"></div>
-
-
-    <!--
-        Clicking the center now ENTERS the presentation
-        instead of reloading the same GitHub URL.
-    -->
-
-    <a
-        class="portal-hotspot"
-        href="#s1"
-        aria-label="Enter project presentation"
-    >
-
-        <span class="portal-beacon"></span>
-
-        <span class="portal-dot"></span>
-
-        <span class="portal-tag">
-            ENTER PROJECT
-        </span>
-
-    </a>
-
-
-    <div class="portal-help">
-        Move to the point they are indicating
-    </div>
-
-</section>
-
-
-<!-- ==========================================================
-     SLIDE 1
-========================================================== -->
-
-<section
-    class="slide"
-    id="s1"
->
+<section class="slide" id="s1">
 
     <div class="topline"></div>
 
@@ -1263,21 +1102,15 @@ body {
 
 
     <img
-        class="heroimg"
+        class="hero-image"
         src="img-000.jpg"
         alt=""
     >
 
-    <div class="heroShade"></div>
+    <div class="hero-shade"></div>
 
 
-    <div
-        class="content"
-        style="
-            max-width:58%;
-            padding-top:11vh;
-        "
-    >
+    <div class="content cover-content">
 
         <div class="kicker">
             Task 01
@@ -1285,39 +1118,65 @@ body {
 
 
         <h1 class="title">
+
             Contemporary<br>
             Classic
+
         </h1>
 
 
         <p class="subtitle">
 
-            From graphite fashion sketch to AI-assisted 3D form —
-            a study in structure, layering and modern formalwear.
+            From visual reference to AI-assisted 3D form —
+            exploring structure, layering and contemporary
+            formal menswear through a digital workflow.
 
         </p>
 
 
-        <div class="meta">
+        <div class="cover-meta">
 
             <div>
+
                 <small>NAME</small>
-                <strong>Akkshhej Rawatt</strong>
+
+                <strong>
+                    Akkshhej Rawatt
+                </strong>
+
             </div>
 
+
             <div>
+
                 <small>SAP ID</small>
-                <strong>590016585</strong>
+
+                <strong>
+                    590016585
+                </strong>
+
             </div>
 
+
             <div>
+
                 <small>COURSE</small>
-                <strong>BBA Digital Business</strong>
+
+                <strong>
+                    BBA Digital Business
+                </strong>
+
             </div>
 
+
             <div>
+
                 <small>CAMPUS</small>
-                <strong>Kandholi</strong>
+
+                <strong>
+                    Kandholi
+                </strong>
+
             </div>
 
         </div>
@@ -1325,7 +1184,7 @@ body {
     </div>
 
 
-    <div class="num">
+    <div class="page-number">
         01 / 07
     </div>
 
@@ -1333,13 +1192,10 @@ body {
 
 
 <!-- ==========================================================
-     SLIDE 2
+     SLIDE 2 — SKETCH / REFERENCE
 ========================================================== -->
 
-<section
-    class="slide"
-    id="s2"
->
+<section class="slide" id="s2">
 
     <div class="topline"></div>
 
@@ -1351,45 +1207,54 @@ body {
     <div class="content">
 
         <div class="kicker">
-            01 · Origin
+            01 · Reference & Concept Setup
         </div>
 
 
-        <h2
-            class="title"
-            style="
-                font-size:
-                clamp(42px,4vw,66px);
-            "
-        >
-            Sketch & Concept Setup
+        <h2 class="section-title">
+
+            Sketch & Concept Reference
+
         </h2>
 
 
         <p class="subtitle">
 
-            The original graphite study establishes silhouette,
-            layering and tailoring before 3D generation.
+            A visual reference was used to establish the
+            silhouette, layering and tailoring language before
+            exploring its translation into a 3D form.
 
         </p>
 
 
-        <div
-            class="grid2"
-            style="
-                height:66vh;
-                margin-top:2vh;
-            "
-        >
-
-            <img
-                class="visual"
-                src="img-001.jpg"
-                alt="Original graphite fashion concept sketch"
-            >
+        <div class="grid-2 sketch-grid">
 
 
-            <div class="stack">
+            <div>
+
+                <img
+                    class="visual"
+                    src="img-001.jpg"
+                    alt="Menswear sketch reference used for concept development"
+                >
+
+
+                <div class="source-note">
+
+                    <strong>REFERENCE SOURCE —</strong>
+
+                    Sketch design reference sourced from
+                    <strong>Pinterest</strong> for academic
+                    visualisation and concept-development purposes.
+                    The original sketch artwork was not created by
+                    the author of this project.
+
+                </div>
+
+            </div>
+
+
+            <div class="sketch-copy">
 
 
                 <div>
@@ -1400,10 +1265,10 @@ body {
 
                     <div class="body">
 
-                        Graphite fashion concept sketch using tonal
-                        shading and fabric folds to communicate
-                        structure, depth and a restrained
-                        monochrome palette.
+                        The reference uses a graphite-style fashion
+                        illustration with tonal shading, fabric
+                        folds and a predominantly monochrome visual
+                        language.
 
                     </div>
 
@@ -1419,8 +1284,8 @@ body {
                     <div class="body">
 
                         A contemporary formal menswear ensemble
-                        built around a fitted waistcoat, crisp
-                        shirt, tie, tailored trousers and an
+                        composed of a crisp shirt, tie, fitted
+                        waistcoat, tailored trousers and an
                         extended outer layer.
 
                     </div>
@@ -1431,14 +1296,15 @@ body {
                 <div>
 
                     <span class="label">
-                        DESIGN INTENT
+                        WHY THIS REFERENCE
                     </span>
 
                     <div class="body">
 
-                        A sharp, composed silhouette that preserves
-                        classic gentleman tailoring while remaining
-                        suitable for later AI-assisted 3D
+                        The reference provides clearly readable
+                        proportions, layered garments and a strong
+                        formal silhouette, making it suitable for
+                        exploring AI-assisted three-dimensional
                         interpretation.
 
                     </div>
@@ -1453,7 +1319,7 @@ body {
     </div>
 
 
-    <div class="num">
+    <div class="page-number">
         02 / 07
     </div>
 
@@ -1461,13 +1327,10 @@ body {
 
 
 <!-- ==========================================================
-     SLIDE 3
+     SLIDE 3 — DEVELOPMENT
 ========================================================== -->
 
-<section
-    class="slide"
-    id="s3"
->
+<section class="slide" id="s3">
 
     <div class="topline"></div>
 
@@ -1483,81 +1346,83 @@ body {
         </div>
 
 
-        <h2
-            class="title"
-            style="
-                font-size:
-                clamp(42px,4vw,66px);
-            "
-        >
-            From Sketch to Design Language
+        <h2 class="section-title">
+
+            From Reference to Design Language
+
         </h2>
 
 
-        <div class="grid2 development-grid">
+        <div class="grid-2 development-grid">
 
 
             <img
                 class="visual"
                 src="img-000.jpg"
-                alt="Fashion concept development and model views"
+                alt="Formal menswear concept and multi-angle design study"
             >
 
 
             <div class="development-copy">
+
 
                 <span class="label">
                     CONTEMPORARY CLASSIC
                 </span>
 
 
-                <p class="body">
+                <p class="development-intro">
 
-                    The concept combines formal tailoring with a
-                    darker, more cinematic silhouette. The long
-                    outer layer adds movement while the fitted
-                    waistcoat keeps the torso structured.
+                    The concept combines traditional formal
+                    tailoring with a darker, more cinematic
+                    silhouette. The long outer layer introduces
+                    movement, while the fitted waistcoat preserves
+                    a structured and controlled torso.
 
                 </p>
 
 
-                <div class="stack">
+                <div class="development-points">
 
 
-                    <div class="body">
+                    <div class="development-point">
 
-                        <b>Silhouette</b>
+                        <strong>Silhouette</strong>
                         —
-                        Long coat + fitted inner structure
+                        Long outer coat paired with a fitted
+                        internal structure.
 
                     </div>
 
 
-                    <div class="body">
+                    <div class="development-point">
 
-                        <b>Layering</b>
+                        <strong>Layering</strong>
                         —
-                        Shirt, waistcoat, tie and outer coat
+                        Shirt, waistcoat, tie and outer coat create
+                        clearly separated garment levels.
 
                     </div>
 
 
-                    <div class="body">
+                    <div class="development-point">
 
-                        <b>Details</b>
+                        <strong>Details</strong>
                         —
-                        Lapel geometry, chain, tie bar and
-                        pocket square
+                        Lapel geometry, chain, tie bar, pocket
+                        square and cuff details reinforce the
+                        tailored character.
 
                     </div>
 
 
-                    <div class="body">
+                    <div class="development-point">
 
-                        <b>3D Readiness</b>
+                        <strong>3D Readiness</strong>
                         —
-                        Front / side / back cues support
-                        spatial interpretation
+                        Front, side and back cues provide enough
+                        spatial information to support
+                        three-dimensional interpretation.
 
                     </div>
 
@@ -1571,7 +1436,7 @@ body {
     </div>
 
 
-    <div class="num">
+    <div class="page-number">
         03 / 07
     </div>
 
@@ -1579,13 +1444,10 @@ body {
 
 
 <!-- ==========================================================
-     SLIDE 4
+     SLIDE 4 — WORKFLOW
 ========================================================== -->
 
-<section
-    class="slide"
-    id="s4"
->
+<section class="slide" id="s4">
 
     <div class="topline"></div>
 
@@ -1601,80 +1463,78 @@ body {
         </div>
 
 
-        <h2
-            class="title"
-            style="
-                font-size:
-                clamp(42px,4vw,66px);
-            "
-        >
+        <h2 class="section-title">
+
             Reference to 3D Generation
+
         </h2>
 
 
         <p class="subtitle">
 
-            Proof of the image-to-3D workflow in Meshy —
-            from concept upload to model generation.
+            The reference image was introduced into an
+            image-to-3D workflow in Meshy, allowing the visual
+            concept to be interpreted as a three-dimensional
+            digital model.
 
         </p>
 
 
-        <div class="cards3">
+        <div class="cards-3">
 
 
-            <div class="card">
+            <article class="card">
 
                 <img
                     src="img-003.jpg"
-                    alt="Concept image loaded into Meshy"
+                    alt="Reference image loaded into Meshy"
                 >
 
                 <div class="step">
-                    01
+                    STEP 01
                 </div>
 
                 <h3>
-                    Concept image loaded
+                    Reference Image Loaded
                 </h3>
 
-            </div>
+            </article>
 
 
-            <div class="card">
+            <article class="card">
 
                 <img
                     src="img-004.jpg"
-                    alt="Meshy image-to-3D setup"
+                    alt="Meshy image-to-3D configuration"
                 >
 
                 <div class="step">
-                    02
+                    STEP 02
                 </div>
 
                 <h3>
-                    Image-to-3D setup
+                    Image-to-3D Configuration
                 </h3>
 
-            </div>
+            </article>
 
 
-            <div class="card">
+            <article class="card">
 
                 <img
                     src="img-005.jpg"
-                    alt="Generated 3D model"
+                    alt="Generated 3D model in Meshy"
                 >
 
                 <div class="step">
-                    03
+                    STEP 03
                 </div>
 
                 <h3>
-                    Generated model
+                    Generated 3D Model
                 </h3>
 
-            </div>
+            </article>
 
 
         </div>
@@ -1682,7 +1542,7 @@ body {
     </div>
 
 
-    <div class="num">
+    <div class="page-number">
         04 / 07
     </div>
 
@@ -1690,13 +1550,10 @@ body {
 
 
 <!-- ==========================================================
-     SLIDE 5
+     SLIDE 5 — OUTPUT
 ========================================================== -->
 
-<section
-    class="slide"
-    id="s5"
->
+<section class="slide" id="s5">
 
     <div class="topline"></div>
 
@@ -1712,70 +1569,63 @@ body {
         </div>
 
 
-        <h2
-            class="title"
-            style="
-                font-size:
-                clamp(42px,4vw,66px);
-            "
-        >
+        <h2 class="section-title">
+
             Generated Meshy Model
+
         </h2>
 
 
         <p class="subtitle">
 
-            Two model views confirm the translated silhouette,
-            layering and overall three-dimensional construction.
+            Multiple model views help evaluate how the reference
+            silhouette, garment layers and proportions translate
+            into three-dimensional space.
 
         </p>
 
 
-        <div
-            class="grid2"
-            style="
-                height:65vh;
-                margin-top:2vh;
-            "
-        >
+        <div class="grid-2 output-grid">
 
 
-            <div class="card">
+            <article class="card output-card">
 
                 <img
                     src="img-005.jpg"
-                    alt="Generated Meshy model front view"
-                    style="height:53vh"
+                    alt="Generated model front view"
                 >
 
                 <h3>
                     Front View
                 </h3>
 
-                <div class="body muted">
+                <div class="body-muted">
+
                     Silhouette · waistcoat · chain · coat layering
+
                 </div>
 
-            </div>
+            </article>
 
 
-            <div class="card">
+            <article class="card output-card">
 
                 <img
                     src="img-006.jpg"
-                    alt="Generated Meshy model three-quarter view"
-                    style="height:53vh"
+                    alt="Generated model three-quarter view"
                 >
 
                 <h3>
-                    3/4 View
+                    Three-Quarter View
                 </h3>
 
-                <div class="body muted">
-                    Depth · drape · spatial construction
+                <div class="body-muted">
+
+                    Depth · drape · proportion · spatial construction
+
                 </div>
 
-            </div>
+            </article>
 
 
         </div>
@@ -1783,7 +1633,7 @@ body {
     </div>
 
 
-    <div class="num">
+    <div class="page-number">
         05 / 07
     </div>
 
@@ -1791,13 +1641,10 @@ body {
 
 
 <!-- ==========================================================
-     SLIDE 6
+     SLIDE 6 — ANALYSIS
 ========================================================== -->
 
-<section
-    class="slide"
-    id="s6"
->
+<section class="slide" id="s6">
 
     <div class="topline"></div>
 
@@ -1813,29 +1660,26 @@ body {
         </div>
 
 
-        <h2
-            class="title"
-            style="
-                font-size:
-                clamp(42px,4vw,66px);
-            "
-        >
+        <h2 class="section-title">
+
             Form, Material & Visual Language
+
         </h2>
 
 
         <p class="subtitle">
 
-            A readable breakdown of what the 3D translation
-            preserves from the original concept.
+            The generated model can be evaluated against the
+            visual qualities established by the original
+            reference.
 
         </p>
 
 
-        <div class="analysis">
+        <div class="analysis-grid">
 
 
-            <div class="card">
+            <article class="analysis-card">
 
                 <h3>
                     DESIGN & FORM
@@ -1843,17 +1687,16 @@ body {
 
                 <p>
 
-                    Long formal silhouette with a fitted inner
-                    waistcoat and extended outer layer. Vertical
-                    proportions create a composed, authoritative
-                    stance.
+                    A long formal silhouette is balanced by a
+                    fitted waistcoat and structured torso,
+                    producing a composed vertical proportion.
 
                 </p>
 
-            </div>
+            </article>
 
 
-            <div class="card">
+            <article class="analysis-card">
 
                 <h3>
                     LAYERING
@@ -1861,16 +1704,16 @@ body {
 
                 <p>
 
-                    White shirt, dark waistcoat and long coat
-                    separate clearly through contrast, lapel
-                    structure and hem length.
+                    Shirt, waistcoat and outer coat remain visually
+                    distinguishable through contrast, lapel
+                    structure and different garment lengths.
 
                 </p>
 
-            </div>
+            </article>
 
 
-            <div class="card">
+            <article class="analysis-card">
 
                 <h3>
                     TAILORING DETAILS
@@ -1878,16 +1721,16 @@ body {
 
                 <p>
 
-                    Defined lapels, buttoned waistcoat, tie bar,
-                    chain accessory, pocket square and tailored
-                    trousers retain the gentleman vocabulary.
+                    Lapels, buttons, tie treatment, chain accessory,
+                    pocket square and cuff details support the
+                    formal menswear vocabulary.
 
                 </p>
 
-            </div>
+            </article>
 
 
-            <div class="card">
+            <article class="analysis-card">
 
                 <h3>
                     MATERIAL DIRECTION
@@ -1895,17 +1738,17 @@ body {
 
                 <p>
 
-                    Dark wool-like suiting, restrained satin
-                    accents and polished footwear create
-                    controlled contrast within the monochrome
-                    concept.
+                    Dark suiting, restrained reflective accents and
+                    polished footwear create controlled material
+                    contrast without breaking the monochrome
+                    character.
 
                 </p>
 
-            </div>
+            </article>
 
 
-            <div class="card">
+            <article class="analysis-card">
 
                 <h3>
                     SILHOUETTE & MOVEMENT
@@ -1913,16 +1756,16 @@ body {
 
                 <p>
 
-                    A fitted torso provides structure while
-                    longer coat panels introduce movement and
-                    visual depth around the legs.
+                    The fitted upper body establishes structure,
+                    while longer coat panels introduce movement and
+                    additional depth around the legs.
 
                 </p>
 
-            </div>
+            </article>
 
 
-            <div class="card">
+            <article class="analysis-card">
 
                 <h3>
                     3D TRANSLATION
@@ -1930,14 +1773,14 @@ body {
 
                 <p>
 
-                    Meshy captures the principal silhouette and
-                    layered construction, allowing the concept
-                    to be evaluated beyond a single sketch
+                    The AI-generated model captures the principal
+                    silhouette and layered construction, enabling
+                    evaluation beyond a single two-dimensional
                     viewpoint.
 
                 </p>
 
-            </div>
+            </article>
 
 
         </div>
@@ -1945,7 +1788,7 @@ body {
     </div>
 
 
-    <div class="num">
+    <div class="page-number">
         06 / 07
     </div>
 
@@ -1953,13 +1796,10 @@ body {
 
 
 <!-- ==========================================================
-     SLIDE 7
+     SLIDE 7 — OUTCOME
 ========================================================== -->
 
-<section
-    class="slide"
-    id="s7"
->
+<section class="slide" id="s7">
 
     <div class="topline"></div>
 
@@ -1969,19 +1809,19 @@ body {
 
 
     <img
-        class="heroimg"
+        class="hero-image"
         src="img-002.jpg"
         alt=""
     >
 
-    <div class="heroShade"></div>
+    <div class="hero-shade"></div>
 
 
     <div
         class="content"
         style="
             max-width:59%;
-            padding-top:9vh;
+            padding-top:8vh;
         "
     >
 
@@ -1992,8 +1832,8 @@ body {
 
         <h2 class="title">
 
-            From a pencil silhouette<br>
-            to a dimensional<br>
+            From visual reference<br>
+            to dimensional<br>
             fashion concept.
 
         </h2>
@@ -2002,19 +1842,14 @@ body {
         <p class="subtitle">
 
             The workflow demonstrates how AI-assisted 3D
-            visualisation can extend a fashion sketch into a
-            spatial model for form evaluation, presentation
-            and further design refinement.
+            visualisation can extend a two-dimensional fashion
+            reference into a spatial model for form evaluation,
+            presentation and further design refinement.
 
         </p>
 
 
-        <div
-            class="quote"
-            style="
-                margin-top:6vh;
-            "
-        >
+        <div class="quote">
 
             Structure gives the garment form.<br>
             Layering gives it depth.<br>
@@ -2026,7 +1861,7 @@ body {
     </div>
 
 
-    <div class="num">
+    <div class="page-number">
         07 / 07
     </div>
 
@@ -2036,84 +1871,363 @@ body {
 </main>
 
 
-<!-- ==========================================================
-     JAVASCRIPT
-========================================================== -->
-
 <script>
 
-/*
-    IMPORTANT:
-    There is NO template-string map/join code here.
+/* ============================================================
+   FOOLPROOF SLIDE NAVIGATION
 
-    Therefore the previous:
+   Goals:
+   1. One mouse-wheel gesture = one slide.
+   2. Trackpad gesture does not accidentally skip 3 slides.
+   3. Arrow keys remain smooth.
+   4. Side dots work.
+   5. No dynamically generated HTML.
+============================================================ */
 
-    ${[1,2,3,4,5,6,7].map(...).join('')}
 
-    garbage cannot appear on the right side anymore.
-*/
+const deck =
+    document.getElementById("deck");
+
+const slides =
+    Array.from(
+        document.querySelectorAll(".slide")
+    );
+
+const navDots =
+    Array.from(
+        document.querySelectorAll(".nav a")
+    );
 
 
-/* Smooth presentation entry */
+let currentSlide = 0;
 
-document
-    .querySelector(".portal-hotspot")
-    .addEventListener(
-        "click",
-        function(event) {
+let isAnimating = false;
 
-            event.preventDefault();
+let wheelAccumulator = 0;
 
-            document
-                .querySelector("#s1")
-                .scrollIntoView({
-                    behavior: "smooth",
-                    block: "start"
-                });
+let wheelResetTimer = null;
+
+
+/* ============================================================
+   GO TO SLIDE
+============================================================ */
+
+function goToSlide(index) {
+
+    const safeIndex =
+        Math.max(
+            0,
+            Math.min(
+                index,
+                slides.length - 1
+            )
+        );
+
+
+    if (
+        safeIndex === currentSlide &&
+        isAnimating
+    ) {
+        return;
+    }
+
+
+    currentSlide =
+        safeIndex;
+
+    isAnimating =
+        true;
+
+
+    slides[currentSlide]
+        .scrollIntoView({
+            behavior: "smooth",
+            block: "start"
+        });
+
+
+    updateNavigation();
+
+
+    /*
+       Cooldown prevents one trackpad swipe
+       from triggering several slides.
+    */
+
+    window.setTimeout(
+        function() {
+
+            isAnimating =
+                false;
+
+            wheelAccumulator =
+                0;
+
+        },
+        720
+    );
+
+}
+
+
+/* ============================================================
+   NAV DOT ACTIVE STATE
+============================================================ */
+
+function updateNavigation() {
+
+    navDots.forEach(
+        function(dot, index) {
+
+            dot.classList.toggle(
+                "active",
+                index === currentSlide
+            );
+
+        }
+    );
+
+}
+
+
+/* ============================================================
+   DETECT CURRENT SLIDE AFTER MANUAL SCROLL
+============================================================ */
+
+function detectCurrentSlide() {
+
+    const deckTop =
+        deck.scrollTop;
+
+    const viewport =
+        deck.clientHeight;
+
+
+    let closestIndex =
+        0;
+
+    let closestDistance =
+        Infinity;
+
+
+    slides.forEach(
+        function(slide, index) {
+
+            const distance =
+                Math.abs(
+                    slide.offsetTop -
+                    deckTop
+                );
+
+
+            if (
+                distance <
+                closestDistance
+            ) {
+
+                closestDistance =
+                    distance;
+
+                closestIndex =
+                    index;
+
+            }
 
         }
     );
 
 
-/* Keyboard navigation */
+    if (
+        closestDistance <
+        viewport * .6
+    ) {
+
+        currentSlide =
+            closestIndex;
+
+        updateNavigation();
+
+    }
+
+}
+
+
+/* ============================================================
+   MOUSE WHEEL / TRACKPAD
+============================================================ */
+
+deck.addEventListener(
+    "wheel",
+    function(event) {
+
+        /*
+           Mobile layouts don't use slide snapping.
+        */
+
+        if (
+            window.innerWidth <= 900
+        ) {
+            return;
+        }
+
+
+        event.preventDefault();
+
+
+        /*
+           If slide animation is already happening,
+           ignore extra wheel events.
+        */
+
+        if (
+            isAnimating
+        ) {
+            return;
+        }
+
+
+        wheelAccumulator +=
+            event.deltaY;
+
+
+        /*
+           Reset accumulator when user pauses.
+        */
+
+        clearTimeout(
+            wheelResetTimer
+        );
+
+
+        wheelResetTimer =
+            setTimeout(
+                function() {
+
+                    wheelAccumulator =
+                        0;
+
+                },
+                180
+            );
+
+
+        /*
+           Mouse wheels often produce large delta values.
+           Trackpads produce several smaller values.
+
+           45 gives a responsive feel without
+           accidentally changing several slides.
+        */
+
+        const threshold =
+            45;
+
+
+        if (
+            wheelAccumulator >
+            threshold
+        ) {
+
+            wheelAccumulator =
+                0;
+
+            goToSlide(
+                currentSlide + 1
+            );
+
+        }
+
+
+        else if (
+            wheelAccumulator <
+            -threshold
+        ) {
+
+            wheelAccumulator =
+                0;
+
+            goToSlide(
+                currentSlide - 1
+            );
+
+        }
+
+    },
+    {
+        passive: false
+    }
+);
+
+
+/* ============================================================
+   KEYBOARD
+============================================================ */
 
 document.addEventListener(
     "keydown",
     function(event) {
 
-        const deck =
-            document.querySelector(".deck");
-
-        const amount =
-            window.innerHeight;
-
-
         if (
             event.key === "ArrowDown" ||
-            event.key === "PageDown"
+            event.key === "PageDown" ||
+            event.key === " "
         ) {
 
             event.preventDefault();
 
-            deck.scrollBy({
-                top: amount,
-                behavior: "smooth"
-            });
+            if (
+                !isAnimating
+            ) {
+
+                goToSlide(
+                    currentSlide + 1
+                );
+
+            }
 
         }
 
 
-        if (
+        else if (
             event.key === "ArrowUp" ||
             event.key === "PageUp"
         ) {
 
             event.preventDefault();
 
-            deck.scrollBy({
-                top: -amount,
-                behavior: "smooth"
-            });
+            if (
+                !isAnimating
+            ) {
+
+                goToSlide(
+                    currentSlide - 1
+                );
+
+            }
+
+        }
+
+
+        else if (
+            event.key === "Home"
+        ) {
+
+            event.preventDefault();
+
+            goToSlide(0);
+
+        }
+
+
+        else if (
+            event.key === "End"
+        ) {
+
+            event.preventDefault();
+
+            goToSlide(
+                slides.length - 1
+            );
 
         }
 
@@ -2121,56 +2235,65 @@ document.addEventListener(
 );
 
 
-/* Defensive cleanup:
-   if any rogue template text somehow exists,
-   remove it.
-*/
+/* ============================================================
+   NAVIGATION DOT CLICKS
+============================================================ */
 
-function removeRogueTemplateText() {
+navDots.forEach(
+    function(dot, index) {
 
-    const walker =
-        document.createTreeWalker(
-            document.body,
-            NodeFilter.SHOW_TEXT
+        dot.addEventListener(
+            "click",
+            function(event) {
+
+                event.preventDefault();
+
+                if (
+                    !isAnimating
+                ) {
+
+                    goToSlide(index);
+
+                }
+
+            }
         );
 
-    const remove = [];
-
-    let node;
-
-
-    while (
-        node = walker.nextNode()
-    ) {
-
-        const text =
-            node.nodeValue || "";
+    }
+);
 
 
-        if (
-            text.includes("${[") ||
-            text.includes(".map(n=>") ||
-            text.includes(".join('')") ||
-            text.includes('.join("")')
-        ) {
+/* ============================================================
+   SCROLL SYNC
+============================================================ */
 
-            remove.push(node);
+let scrollTimer;
 
-        }
+
+deck.addEventListener(
+    "scroll",
+    function() {
+
+        clearTimeout(
+            scrollTimer
+        );
+
+
+        scrollTimer =
+            setTimeout(
+                detectCurrentSlide,
+                100
+            );
 
     }
+);
 
 
-    remove.forEach(
-        function(node) {
-            node.remove();
-        }
-    );
+/* ============================================================
+   INITIAL STATE
+============================================================ */
 
-}
-
-
-removeRogueTemplateText();
+updateNavigation();
 
 </script>
 
